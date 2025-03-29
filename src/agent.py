@@ -20,6 +20,7 @@ from aws_deploy.aws_secrets import get_secrets
 from tools.employee_info_extractor import EmployeeInfoExtractorTool
 from tools.performance_gap_analyzer import PerformanceGapAnalyzerTool
 from tools.improvement_plan_analyzer import ImprovementPlanAnalyzerTool
+from tools.support_resources_identifier import SupportResourcesIdentifierTool
 
 # Load environment variables
 load_dotenv()
@@ -74,7 +75,8 @@ def chat_with_memory(user_input, thread_id="test-thread"):
     employee_info_tool = EmployeeInfoExtractorTool()
     performance_gap_tool = PerformanceGapAnalyzerTool()
     improvement_plan_tool = ImprovementPlanAnalyzerTool()
-    tools = [employee_info_tool, performance_gap_tool, improvement_plan_tool]
+    support_resources_tool = SupportResourcesIdentifierTool()
+    tools = [employee_info_tool, performance_gap_tool, improvement_plan_tool, support_resources_tool]
     
     # Create agent with tools
     agent_executor = create_react_agent(model, checkpointer=memory, tools=tools)

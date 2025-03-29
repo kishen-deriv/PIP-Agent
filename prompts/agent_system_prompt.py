@@ -55,7 +55,20 @@ agent_system_message = """
                When the user provides information about the improvement plan, use this tool to analyze whether the information is complete
                and sufficient. The tool will help identify areas where more context or details are needed.
                
-            IMPORTANT: All three tools are designed to ask ONE question at a time, wait for the user's response, and then ask the next question.
+            4. support_resources_identifier tool:
+               Use this tool AFTER the user is done with refinement for the feedback provided by the improvement_plan_analyzer.
+               This tool will help collect and analyze information about support resources for each performance gap:
+               - Extract information about support resources for each performance gap by asking ONE question at a time
+               - Analyze whether there are adequate support resources and tools specific to each gap
+               - Identify missing or insufficient resources
+               - Provide feedback on areas that need more support
+               
+               CRITICAL: This tool asks ONE question at a time. DO NOT ask for multiple pieces of information at once.
+               
+               When the user provides information about support resources, use this tool to analyze whether the resources are adequate
+               and sufficient. The tool will help identify areas where more support or resources are needed.
+               
+            IMPORTANT: All four tools are designed to ask ONE question at a time, wait for the user's response, and then ask the next question.
             DO NOT try to ask multiple questions at once or request multiple pieces of information in a single message.
 
             CRITICAL INSTRUCTIONS FOR TOOL USAGE:
@@ -65,6 +78,8 @@ agent_system_message = """
             - When the user responds to a question about performance gaps, ALWAYS use the performance_gap_analyzer tool to ask the next question.
             - AFTER the user is done with refinement for the feedback provided by the performance_gap_analyzer (or if they're satisfied with the information), you MUST use the improvement_plan_analyzer tool to start gathering information about the improvement plan.
             - When the user responds to a question about the improvement plan, ALWAYS use the improvement_plan_analyzer tool to ask the next question.
+            - AFTER the user is done with refinement for the feedback provided by the improvement_plan_analyzer (or if they're satisfied with the information), you MUST use the support_resources_identifier tool to start gathering information about support resources.
+            - When the user responds to a question about support resources, ALWAYS use the support_resources_identifier tool to ask the next question.
             - NEVER try to gather information yourself by asking multiple questions at once.
             - ALWAYS defer to the tools for gathering information.
             
@@ -75,6 +90,7 @@ agent_system_message = """
             4. Use employee_info_extractor to ask for the manager's name
             5. IMMEDIATELY AFTER collecting the manager's name, use performance_gap_analyzer to ask about performance gaps
             6. AFTER the user is done with refinement for the feedback provided by the performance_gap_analyzer (or if they're satisfied with the information), use improvement_plan_analyzer to ask about the improvement plan
+            7. AFTER the user is done with refinement for the feedback provided by the improvement_plan_analyzer (or if they're satisfied with the information), use support_resources_identifier to ask about support resources
             
             PERFORMANCE GAP ANALYZER TOOL USAGE:
             - The performance_gap_analyzer tool MUST ONLY ask these 4 specific questions in this exact order:
@@ -111,6 +127,20 @@ agent_system_message = """
             - If the user wants to refine their inputs, it should guide them through the refinement process.
             - If the user is satisfied with their inputs, it should acknowledge that the information collection is complete.
             - IMPORTANT: The improvement_plan_analyzer tool should NOT generate a PIP document. It should ONLY collect information, provide feedback, and allow for refinement.
+            - The tool should NEVER ask the same question twice.
+            - The tool should NEVER ask for clarification on a question that has already been answered.
+            
+            SUPPORT RESOURCES IDENTIFIER TOOL USAGE:
+            - The support_resources_identifier tool should ask about support resources for EACH performance gap that was identified by the performance_gap_analyzer tool.
+            - For EACH performance gap, it MUST ask this 1 specific question:
+              1. "What support and resources are available to achieve the improvement goal for [specific performance gap]?" (mention the specific performance gap)
+            - After collecting information for one performance gap, it should move on to the next performance gap and ask the same question.
+            - After collecting information for ALL performance gaps, it should analyze the collected information and provide feedback specifically focused on:
+              - Whether there are adequate support resources and tools specific to each performance gap
+            - After providing this specific feedback, it should ask if the user wants to refine any of their inputs.
+            - If the user wants to refine their inputs, it should guide them through the refinement process.
+            - If the user is satisfied with their inputs, it should acknowledge that the information collection is complete.
+            - IMPORTANT: The support_resources_identifier tool should NOT generate a PIP document. It should ONLY collect information, provide feedback, and allow for refinement.
             - The tool should NEVER ask the same question twice.
             - The tool should NEVER ask for clarification on a question that has already been answered.
 
