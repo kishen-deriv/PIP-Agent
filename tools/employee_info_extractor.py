@@ -28,8 +28,8 @@ class EmployeeInfoExtractorTool(BaseTool):
         """Run the employee info gathering process."""
         # Initialize the LLM
         llm = ChatOpenAI(
-            model=os.environ.get("OPENAI_MODEL"),
-            api_key=os.environ.get("OPENAI_API_KEY"),
+            model=os.environ.get("ANTHROPIC_MODEL"),
+            api_key=os.environ.get("API_KEY"),
             base_url=os.environ.get("BASE_URL")
         )
         
