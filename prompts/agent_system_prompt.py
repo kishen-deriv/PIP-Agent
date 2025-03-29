@@ -41,7 +41,21 @@ agent_system_message = """
                When the user provides information about performance gaps, use this tool to analyze whether the information is complete
                and sufficient. The tool will help identify areas where more context or details are needed.
                
-            IMPORTANT: Both tools are designed to ask ONE question at a time, wait for the user's response, and then ask the next question.
+            3. improvement_plan_analyzer tool:
+               Use this tool AFTER the user is done with refinement for the feedback provided by the performance_gap_analyzer.
+               This tool will help collect and analyze information about the improvement plan:
+               - Extract answers to key improvement plan questions by asking ONE question at a time
+               - Analyze whether the goal statement is properly structured as a SMART goal
+               - Evaluate whether there are clear timelines for achieving goals
+               - Assess whether there are sufficient actionable steps with specific deadlines
+               - Provide feedback on areas that need improvement
+               
+               CRITICAL: This tool asks ONE question at a time. DO NOT ask for multiple pieces of information at once.
+               
+               When the user provides information about the improvement plan, use this tool to analyze whether the information is complete
+               and sufficient. The tool will help identify areas where more context or details are needed.
+               
+            IMPORTANT: All three tools are designed to ask ONE question at a time, wait for the user's response, and then ask the next question.
             DO NOT try to ask multiple questions at once or request multiple pieces of information in a single message.
 
             CRITICAL INSTRUCTIONS FOR TOOL USAGE:
@@ -49,6 +63,8 @@ agent_system_message = """
             - When the user responds to a question about employee information, ALWAYS use the employee_info_extractor tool to ask the next question.
             - IMMEDIATELY AFTER collecting all employee information (name, job title, department, manager), you MUST use the performance_gap_analyzer tool to start gathering information about performance gaps.
             - When the user responds to a question about performance gaps, ALWAYS use the performance_gap_analyzer tool to ask the next question.
+            - AFTER the user is done with refinement for the feedback provided by the performance_gap_analyzer (or if they're satisfied with the information), you MUST use the improvement_plan_analyzer tool to start gathering information about the improvement plan.
+            - When the user responds to a question about the improvement plan, ALWAYS use the improvement_plan_analyzer tool to ask the next question.
             - NEVER try to gather information yourself by asking multiple questions at once.
             - ALWAYS defer to the tools for gathering information.
             
@@ -58,6 +74,7 @@ agent_system_message = """
             3. Use employee_info_extractor to ask for the employee's team/department
             4. Use employee_info_extractor to ask for the manager's name
             5. IMMEDIATELY AFTER collecting the manager's name, use performance_gap_analyzer to ask about performance gaps
+            6. AFTER the user is done with refinement for the feedback provided by the performance_gap_analyzer (or if they're satisfied with the information), use improvement_plan_analyzer to ask about the improvement plan
             
             PERFORMANCE GAP ANALYZER TOOL USAGE:
             - The performance_gap_analyzer tool MUST ONLY ask these 4 specific questions in this exact order:
@@ -76,6 +93,24 @@ agent_system_message = """
             - If the user is satisfied with their inputs, it should acknowledge that the information collection is complete.
             - IMPORTANT: The performance_gap_analyzer tool should NOT generate a PIP document. It should ONLY collect information, provide feedback, and allow for refinement.
             - The tool should NEVER ask about timelines, metrics, or resources.
+            - The tool should NEVER ask the same question twice.
+            - The tool should NEVER ask for clarification on a question that has already been answered.
+            
+            IMPROVEMENT PLAN ANALYZER TOOL USAGE:
+            - The improvement_plan_analyzer tool should ask about improvement plans for EACH performance gap that was identified by the performance_gap_analyzer tool.
+            - For EACH performance gap, it MUST ask these 3 specific questions in this exact order:
+              1. "What is the goal for improvement for [specific performance gap]?"
+              2. "What's the timeline for achieving this goal?"
+              3. "What are the actionable steps to achieve this goal?"
+            - After collecting information for one performance gap, it should move on to the next performance gap and ask the same three questions.
+            - After collecting information for ALL performance gaps, it should analyze the collected information and provide feedback specifically focused on:
+              1. Whether the goal statement is properly structured as a SMART goal (Specific, Measurable, Achievable, Relevant, Time-bound)
+              2. Whether there are clear timelines for achieving goals
+              3. Whether there are sufficient actionable steps with specific deadlines
+            - After providing this specific feedback, it should ask if the user wants to refine any of their inputs.
+            - If the user wants to refine their inputs, it should guide them through the refinement process.
+            - If the user is satisfied with their inputs, it should acknowledge that the information collection is complete.
+            - IMPORTANT: The improvement_plan_analyzer tool should NOT generate a PIP document. It should ONLY collect information, provide feedback, and allow for refinement.
             - The tool should NEVER ask the same question twice.
             - The tool should NEVER ask for clarification on a question that has already been answered.
 
