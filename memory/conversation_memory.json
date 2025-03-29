@@ -1,0 +1,150 @@
+{
+  "test-thread": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "Hello, my name is John."
+      },
+      {
+        "role": "ai",
+        "content": "Hello John! It's nice to meet you. I'm an AI assistant here to help you with any questions or tasks you might have. Feel free to ask me anything, and I'll do my best to assist you. How can I help you today?"
+      },
+      {
+        "role": "human",
+        "content": "What's my name?"
+      },
+      {
+        "role": "ai",
+        "content": "Your name is John, as you mentioned in your introduction."
+      },
+      {
+        "role": "human",
+        "content": "What's 2+2?"
+      },
+      {
+        "role": "ai",
+        "content": "2+2 = 4"
+      },
+      {
+        "role": "human",
+        "content": "What was my previous question?"
+      },
+      {
+        "role": "ai",
+        "content": "Your previous question was \"What's 2+2?\""
+      },
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello again, John. How can I help you today?"
+      },
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello John. Is there something specific I can help you with today? Perhaps you need assistance with creating a Performance Improvement Plan (PIP) document? If so, I can help gather the necessary information to draft a professional PIP letter. Just let me know what you'd like assistance with."
+      },
+      {
+        "role": "human",
+        "content": "!clear"
+      },
+      {
+        "role": "ai",
+        "content": "Hello John! It's nice to meet you. I'm Leo, an HR Assistant here to help you. Is there something I can help you with today? If you're looking to create a Performance Improvement Plan (PIP) document, I'd be happy to assist you with that process."
+      },
+      {
+        "role": "human",
+        "content": "The employee name is Marvin"
+      },
+      {
+        "role": "ai",
+        "content": "I apologize for the error. Let me try to gather more information from you directly to create a comprehensive PIP document for Marvin.\n\nTo proceed with drafting the Performance Improvement Plan, I'll need some additional details about Marvin:\n\n1. What is Marvin's full name (including last name)?\n2. What is Marvin's job title or role?\n3. Which team or department does Marvin work in?\n4. Who is Marvin's manager?\n5. What performance issues need to be addressed in the PIP?\n\nOnce you provide this information, I'll be able to draft a professional and actionable Performance Improvement Plan document."
+      },
+      {
+        "role": "human",
+        "content": "The employee name is Marvin"
+      },
+      {
+        "role": "ai",
+        "content": "I notice that you've provided Marvin's first name. To create a comprehensive PIP document, I'll need some additional information:\n\n1. What is Marvin's last name?\n2. What is Marvin's job title or role?\n3. Which team or department does Marvin work in?\n4. Who is Marvin's manager?\n\nThis information will help me draft a professional and effective Performance Improvement Plan document for Marvin."
+      },
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello John! I'm here to help you. Let me know if you'd like to proceed with creating that Performance Improvement Plan or if there's something else I can assist you with today."
+      }
+    ]
+  },
+  "test-cli": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm here to assist you with perfect memory of our conversation. How can I help you today?"
+      },
+      {
+        "role": "human",
+        "content": "how are you"
+      },
+      {
+        "role": "ai",
+        "content": "I'm functioning well, thank you for asking! How are you doing today?"
+      },
+      {
+        "role": "human",
+        "content": "what is my name"
+      },
+      {
+        "role": "ai",
+        "content": "You haven't mentioned your name in our conversation yet. Would you like to introduce yourself?"
+      },
+      {
+        "role": "human",
+        "content": "my name is kishen"
+      },
+      {
+        "role": "ai",
+        "content": "Nice to meet you, Kishen! Is there something I can help you with today?"
+      },
+      {
+        "role": "human",
+        "content": "what is my name"
+      },
+      {
+        "role": "ai",
+        "content": "Your name is Kishen, as you mentioned in your previous message."
+      }
+    ]
+  },
+  "default": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hi there! I'm Leo, an HR assistant who can help you create a Professional Improvement Plan (PIP) document. When you're ready to create a PIP, just let me know and I can guide you through the process. How can I help you today?"
+      },
+      {
+        "role": "human",
+        "content": "I am ready"
+      },
+      {
+        "role": "ai",
+        "content": ""
+      }
+    ]
+  }
+}
