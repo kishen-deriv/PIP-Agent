@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 from langgraph.prebuilt import create_react_agent
 from langchain_openai import ChatOpenAI
+from langchain_anthropic import ChatAnthropic
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 from langgraph.checkpoint.memory import MemorySaver
@@ -58,11 +59,11 @@ def save_conversation_memory(thread_id, memory_data):
 
 def chat_with_memory(user_input, thread_id="test-thread"):
     """Chat with the agent using persistent memory"""
-    # Initialize model
+    # Initialize model using ChatOpenAI with LiteLLM proxy
     model = ChatOpenAI(
-        model=get_secrets("OPENAI_MODEL"),
-        api_key=get_secrets("OPENAI_API_KEY"),
-        base_url=get_secrets("BASE_URL")
+        model=get_secrets("ANTHROPIC_MODEL"),  # Still use the Anthropic model name
+        api_key=get_secrets("API_KEY"),  # Use the Anthropic API key
+        base_url=get_secrets("BASE_URL")  # Use the LiteLLM proxy URL
     )
     
     # Initialize memory saver
@@ -105,9 +106,15 @@ def chat_with_memory(user_input, thread_id="test-thread"):
         
         # Extract the AI's response
         ai_message = response["messages"][-1].content
+        
+        # If AI message is empty, return a default message instead
+        if not ai_message:
+            ai_message = "I'm processing your request. Could you provide more details?"
 
     except Exception as e:
+        import traceback
         print(f"Error invoking agent: {e}")
+        print(f"Detailed error: {traceback.format_exc()}")
         ai_message = "I apologize, but I encountered an error. Please try again."
     
     # Add the AI response to the conversation

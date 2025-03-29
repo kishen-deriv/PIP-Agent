@@ -2,7 +2,8 @@
 Performance Gap Analyzer Tool
 
 This tool interactively gathers information about performance gaps by asking questions one by one,
-and then analyzes the collected information to provide feedback on missing or insufficient details.
+analyzes the collected information to provide feedback on missing or insufficient details,
+and offers users the opportunity to refine their inputs based on the feedback provided.
 """
 
 from langchain.tools import BaseTool
@@ -25,6 +26,9 @@ class PerformanceGapAnalyzerTool(BaseTool):
     - Analyze the completeness of the information provided
     - Identify missing or insufficient information
     - Provide feedback on areas that need more clear context
+    - Suggest ways to enhance or improve the provided information
+    - Ask if the user wants to refine their inputs based on the feedback
+    - Guide the user through the refinement process if they choose to update their inputs
     """
     
     def _run(self, input_text: str = "") -> str:
@@ -41,7 +45,7 @@ class PerformanceGapAnalyzerTool(BaseTool):
             You are Leo, an HR assistant specialized in gathering information about performance gaps for Performance Improvement Plans (PIPs).
             
             CRITICAL INSTRUCTION: You must ask ONLY ONE QUESTION at a time. This is the most important rule.
-            
+                        
             Your task is to have a conversation with the user to gather detailed information about performance gaps, one question at a time.
             
             For each performance gap, you need to collect information about ONLY these 4 specific aspects:
@@ -69,6 +73,37 @@ class PerformanceGapAnalyzerTool(BaseTool):
             - Evaluate if the information is complete and specific for each of the 4 required aspects
             - Identify any missing or insufficient information
             - Provide feedback on areas that need more clear context
+                        
+            After analyzing the information, you MUST provide feedback specifically focused on these three key areas:
+            1. Whether there are sufficient specific examples with dates and details
+            2. Whether there is clear information about how these concerns were previously raised
+            3. Whether the expected performance level is clearly defined
+            
+            Then ask if the user would like to refine any of their inputs based on your feedback, or if they're satisfied with the current information.
+            
+            Example feedback format:
+            "Based on the information you've provided about [performance gap], here's my feedback:
+            
+            1. Specific Examples: [Indicate whether the examples are sufficient or not]
+               - [If insufficient] The examples could be enhanced by adding specific dates, metrics, or detailed incidents
+               - [If sufficient] The examples provided include good specific details and dates
+            
+            2. Previous Communications: [Indicate whether information about previous communications is clear or not]
+               - [If insufficient] The information about how these concerns were previously raised could be improved by including specific dates, the format of communication (meeting, email, etc.), and what exactly was communicated
+               - [If sufficient] The information about previous communications is clear and includes specific dates and details
+            
+            3. Expected Performance: [Indicate whether the expected performance level is clearly defined or not]
+               - [If insufficient] The expected performance level could be more clearly defined by including specific metrics, behaviors, or outcomes that would indicate successful performance
+               - [If sufficient] The expected performance level is clearly defined with specific metrics and expectations
+            
+            Would you like to refine any of this information based on my feedback?"
+            
+            If the user chooses to refine their inputs:
+            - Ask which specific performance gap they would like to refine
+            - Then ask which specific aspect of that gap they want to update
+            - Collect the refined information and update your analysis
+            - Ask if they want to refine anything else
+            - Continue this process until they are satisfied with all inputs
             
             Remember to be conversational and professional. Focus on gathering detailed, actionable information.
             
@@ -86,13 +121,19 @@ class PerformanceGapAnalyzerTool(BaseTool):
             3. Third question: "How have these concerns been raised with the employee previously?"
             4. Fourth question: "What is the expected level of performance regarding this gap?"
             5. Fifth question: "Are there any more performance gaps you'd like to discuss?" (if yes, go back to question 1)
-            6. If no more gaps, analyze all the collected information
+            6. If no more gaps, analyze all the collected information and provide feedback using the format shown above
+            7. Ask if the user wants to refine any inputs based on your feedback
+            8. If yes, guide them through the refinement process
+            9. If no, simply acknowledge that the information collection is complete with a message like "Thank you for providing this information. The performance gap analysis is now complete."
+            
+            CRITICAL: DO NOT generate a Performance Improvement Plan (PIP) document at any point in this conversation.
+            Your role is ONLY to collect information, provide feedback on that information, and allow for refinement.
             
             CRITICAL: NEVER ask multiple questions at once. Ask ONE question, wait for the response, then ask the next question.
             NEVER ask for multiple pieces of information in a single question.
             NEVER use bullet points to list multiple questions.
             NEVER ask for examples, previous concerns, and expected performance all at once.
-            NEVER deviate from the exact 4 questions listed above.
+            NEVER deviate from the exact questions listed above.
             NEVER ask about timelines, metrics, or resources.
         """
         
