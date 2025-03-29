@@ -135,7 +135,7 @@
       },
       {
         "role": "ai",
-        "content": "Hi there! I'm Leo, an HR assistant who can help you create Performance Improvement Plan (PIP) documents. When you're ready to work on a PIP, just let me know and I'll guide you through the process of gathering all the necessary information."
+        "content": "Hi there! I'm Leo, an HR assistant who can help you create Performance Improvement Plan (PIP) documents. Let me know when you're ready to start creating a PIP, and I'll guide you through the process."
       },
       {
         "role": "human",
@@ -143,19 +143,11 @@
       },
       {
         "role": "ai",
-        "content": "Let's get started with creating a Performance Improvement Plan. First, could you please provide the employee's full name for whom you're creating this PIP?"
+        "content": "Let's begin creating the PIP. What is the employee's full name?"
       },
       {
         "role": "human",
-        "content": "marvin"
-      },
-      {
-        "role": "ai",
-        "content": "Could you please provide Marvin's last name as well?"
-      },
-      {
-        "role": "human",
-        "content": "chin"
+        "content": "marvin chin"
       },
       {
         "role": "ai",
@@ -163,11 +155,11 @@
       },
       {
         "role": "human",
-        "content": "ai enginner"
+        "content": "ai engineer"
       },
       {
         "role": "ai",
-        "content": "What department or team is Marvin Chin a part of?"
+        "content": "What team or department does Marvin Chin work in?"
       },
       {
         "role": "human",
@@ -191,7 +183,7 @@
       },
       {
         "role": "ai",
-        "content": "Could you provide specific examples of how this performance gap reflects in Marvin Chin's work performance?"
+        "content": "Thank you for providing that. Could you provide specific examples of how this gap reflects in Marvin Chin's work performance?"
       },
       {
         "role": "human",
@@ -215,7 +207,7 @@
       },
       {
         "role": "ai",
-        "content": "Are there any other performance gaps you would like to discuss for Marvin Chin?"
+        "content": "Are there any other performance gaps you'd like to discuss for Marvin Chin?"
       },
       {
         "role": "human",
@@ -223,7 +215,7 @@
       },
       {
         "role": "ai",
-        "content": "What is the specific performance gap you've identified?"
+        "content": "What is the next specific performance gap you've identified?"
       },
       {
         "role": "human",
@@ -255,7 +247,7 @@
       },
       {
         "role": "ai",
-        "content": "Are there any other performance gaps you would like to discuss for Marvin Chin?"
+        "content": "Are there any other performance gaps you'd like to discuss for Marvin Chin?"
       },
       {
         "role": "human",
@@ -263,7 +255,7 @@
       },
       {
         "role": "ai",
-        "content": "What is the specific performance gap you've identified?"
+        "content": "What is the next specific performance gap you've identified?"
       },
       {
         "role": "human",
@@ -295,7 +287,7 @@
       },
       {
         "role": "ai",
-        "content": "Are there any other performance gaps you would like to discuss for Marvin Chin?"
+        "content": "Are there any other performance gaps you'd like to discuss for Marvin Chin?"
       },
       {
         "role": "human",
@@ -303,7 +295,7 @@
       },
       {
         "role": "ai",
-        "content": "I've analyzed the information provided for Marvin Chin's performance gaps. Here's my feedback:\n\nGap 1: Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation\n- Specific examples: Good specificity with mentions of Q4 lack of updates until requested, which affected project status assessment and decision-making.\n- Previous communication: Very detailed with specific dates (November 12 and 15, 2024), channels (call, Slack), and exact instructions given.\n- Expected performance: Clearly defined with timeline (end of Q4), specific expectations for communication, and final deliverable (completing evaluation and selecting a tool).\n\nGap 2: Lack of Proactiveness in Handling Cypress Maintenance and Regression Delays\n- Specific examples: Good specificity with mention of specific tag versions (V20241112_0, V20241216_0, V20241204_0) and the impact (delayed regression testing and release timeline).\n- Previous communication: Well documented with specific dates (November 11-12, 2024), communication channel (Slack), who raised the concerns (Mun Sei and the manager), and the employee's response.\n- Expected performance: Clearly defined expectations regarding ensuring smooth regression runs and responsibilities as team lead.\n\nGap 3: Lack of Engagement in Squad-Related Production Issue Discussions\n- Specific examples: Good specificity with mention of a specific incident (#incident_twillio-tajikistan-issue-11-nov-2024) on November 11, 2024, and the impact (other team members having to step in, delaying resolution).\n- Previous communication: Mentioned a call about team structure changes where expectations were communicated, though specific date is not provided.\n- Expected performance: Clear expectations regarding participation in squad discussions, QA problem resolution, and ownership of QA tasks.\n\nThe information provided for all three performance gaps is generally comprehensive and well-documented. The only minor improvement could be adding a specific date for when the team structure changes call occurred in Gap 3.\n\nWould you like to refine any of the information provided for these performance gaps?"
+        "content": "Based on the information you've provided, I've analyzed the three performance gaps for Marvin Chin:\n\n1. **Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation**\n   - Examples provided show issues with regular progress updates and communication\n   - Previous discussions documented with specific dates (November 12 and 15, 2024)\n   - Clear expected performance level outlined\n\n2. **Lack of Proactiveness in Handling Cypress Maintenance and Regression Delays**\n   - Examples cite specific version tags where failures occurred\n   - Previous discussions documented with dates (November 11-12, 2024)\n   - Expected performance outlined\n\n3. **Lack of Engagement in Squad-Related Production Issue Discussions**\n   - Specific example from November 11, 2024 incident provided\n   - Previous discussions about team structure changes mentioned\n   - Expected performance outlined\n\nThe information provided is quite thorough. Would you like to refine or add any more details to any of these performance gaps before we move on to creating improvement plans?"
       },
       {
         "role": "human",
@@ -311,7 +303,7 @@
       },
       {
         "role": "ai",
-        "content": "What is the goal for improvement for the first performance gap: \"Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation\"?"
+        "content": "Now let's work on improvement plans for each performance gap. Let's start with the first one.\n\nWhat is the goal for improvement for \"Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation\"?"
       },
       {
         "role": "human",
@@ -331,11 +323,11 @@
       },
       {
         "role": "human",
-        "content": "\"- Set reminder and provide weekly updates on research and migration progress in #project_automated_testing starting immediately after vendor finalization.- Create a dashboard to track the weekly migration progress with the new tool.- Review PRs on new tool migration and provide constructive feedback aligned with documented best practices.- Document best practices and create a guideline for using the new tool by 24 Jan 2025.- Develop and share a migration plan from Cypress Percy to the new low-code tool by 31 Jan 2025.- Begin weekly Zoom knowledge-sharing sessions on the new tool for all QA team members starting after vendor finalization, ensuring at least five recorded sessions by end of March 2025.- Address and resolve team members\u2019 questions about the new tool in the #need_help_<new_tool_name> channel starting two weeks after tool finalization.- Submit the 2x2 QA monthly report for January 2025 detailing progress, challenges, and mitigating actions."
+        "content": "\"- Set reminder and provide weekly updates on research and migration progress in #project_automated_testing starting immediately after vendor finalization.- Create a dashboard to track the weekly migration progress with the new tool.- Review PRs on new tool migration and provide constructive feedback aligned with documented best practices.- Document best practices and create a guideline for using the new tool by 24 Jan 2025.- Develop and share a migration plan from Cypress Percy to the new low-code tool by 31 Jan 2025.- Begin weekly Zoom knowledge-sharing sessions on the new tool for all QA team members starting after vendor finalization, ensuring at least five recorded sessions by end of March 2025.- Address and resolve team members\u2019 questions about the new tool in the #need_help_<new_tool_name> channel starting two weeks after tool finalization.- Submit the 2x2 QA monthly report for January 2025 detailing progress, challenges, and mitigating actions.\""
       },
       {
         "role": "ai",
-        "content": "What is the goal for improvement for the second performance gap: \"Lack of Proactiveness in Handling Cypress Maintenance and Regression Delays\"?"
+        "content": "Now, let's move on to the second performance gap.\n\nWhat is the goal for improvement for \"Lack of Proactiveness in Handling Cypress Maintenance and Regression Delays\"?"
       },
       {
         "role": "human",
@@ -359,7 +351,15 @@
       },
       {
         "role": "ai",
-        "content": "What is the goal for improvement for the third performance gap: \"Lack of Engagement in Squad-Related Production Issue Discussions\"?"
+        "content": "Let's move on to the third performance gap.\n\nWhat is the goal for improvement for \"Lack of Engagement in Squad-Related Production Issue Discussions\"?"
+      },
+      {
+        "role": "human",
+        "content": "On November 11, 2024, during the incident #incident_twillio-tajikistan-issue-11-nov-2024, you did not participate in the incident channel, despite being part of the Squad User Profile Management. This lack of involvement led to other team members having to step in and assist, delaying the resolution process."
+      },
+      {
+        "role": "ai",
+        "content": "I see that you've shared the example again. Let me ask more specifically: What is the goal for improvement regarding Marvin's engagement in Squad-Related Production Issue Discussions? What should he aim to achieve in terms of improving this performance gap?"
       },
       {
         "role": "human",
@@ -383,7 +383,7 @@
       },
       {
         "role": "ai",
-        "content": "I've analyzed your improvement plans for each performance gap. Here's my feedback:\n\nGap 1: Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation\n- SMART Goal: Your goal includes specific deliverables (vendor evaluation by Jan 17, 2025, and 100% visual automation in Trader's Hub by Feb 28, 2025), which is measurable and time-bound.\n- Timeline: 3 months is clearly stated.\n- Actionable Steps: You've provided detailed steps with specific deadlines for most items.\n\nGap 2: Lack of Proactiveness in Handling Cypress Maintenance and Regression Delays\n- SMART Goal: The goal is specific (reduce flaky test failures to fewer than 8 per test run, ensure no release cut-off times are missed) and time-bound (next 30 days).\n- Timeline: 1 month is clearly stated.\n- Actionable Steps: The steps include specific deadlines, which is good, though they could benefit from more detailed milestones within the 30-day period.\n\nGap 3: Lack of Engagement in Squad-Related Production Issue Discussions\n- SMART Goal: The goal includes specific expectations (progress updates within 24 hours, detailed monthly reports, no task unattended for more than 2 days) and a timeline (90 days).\n- Timeline: 3 months is clearly stated.\n- Actionable Steps: The steps provided are somewhat limited compared to the other gaps. Consider adding more specific actions related to proactive engagement in incident channels and squad discussions.\n\nOverall, your improvement plans are well-structured and include SMART goals, clear timelines, and actionable steps. The plan for Gap 3 could benefit from more detailed actionable steps, particularly around how Marvin will ensure active participation in incident discussions and squad responsibilities.\n\nWould you like to refine any of the information provided in these improvement plans?"
+        "content": "Thank you for providing the improvement plans for each performance gap. Let me analyze this information:\n\n1. **For \"Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation\"**:\n   - The goal is specific and measurable with clear deadlines (finalize vendor by Jan 17, 2025, achieve 100% visual automation by Feb 28, 2025)\n   - The timeline of 3 months is reasonable\n   - The action steps are detailed and include specific deadlines\n\n2. **For \"Lack of Proactiveness in Handling Cypress Maintenance and Regression Delays\"**:\n   - The goal focuses on ensuring no missed release cut-off times due to automation issues\n   - The timeline of 1 month is specific\n   - The action steps include developing guidelines, monitoring regression channels, and addressing test failures\n\n3. **For \"Lack of Engagement in Squad-Related Production Issue Discussions\"**:\n   - The goal includes taking ownership of QA P2P-related tasks and providing updates within 24 hours\n   - The timeline of 3 months is specified\n   - The action steps are specific with a deadline for resolving the bug by January 10th\n\nWould you like to refine any of these improvement plans before we move on to discussing support resources?"
       },
       {
         "role": "human",
@@ -391,7 +391,7 @@
       },
       {
         "role": "ai",
-        "content": "What support and resources are available to achieve the improvement goal for \"Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation\"?"
+        "content": "Let's now discuss the support resources available for each performance gap.\n\nWhat support and resources are available to achieve the improvement goal for \"Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation\"?"
       },
       {
         "role": "human",
@@ -415,7 +415,7 @@
       },
       {
         "role": "ai",
-        "content": "I've reviewed the support resources you've provided for each performance gap. Here's my analysis:\n\nFor all three performance gaps, you've provided mentorship and guidance resources:\n- Biweekly mentorship and check-ins with Umithra and Mee Yun for performance gaps 1 and 2\n- Technical consultation with Mark O'Donnell for gaps 1 and 2\n- Biweekly feedback sessions from Mee Yun for gap 3\n- Job shadowing with Reshma specifically for production issue handling in #announce_bugs_usability_issues channel for gap 3\n\nThese resources provide good human support through mentorship and guidance, which is valuable. However, I notice a few areas that could be enhanced:\n\n1. For the Visual Automation Tool Evaluation gap, consider adding access to specific technical resources like documentation, training materials, or licenses for the tools being evaluated.\n\n2. For the Cypress Maintenance and Regression Delays gap, consider including access to technical resources such as debugging tools, test environments, or allocated time for maintenance work.\n\n3. For the Squad-Related Production Issue Discussions gap, the job shadowing with Reshma is a great start, but consider adding access to relevant communication channels, incident response documentation, or team collaboration tools.\n\nWould you like to refine or add any additional support resources to address these gaps more comprehensively?"
+        "content": "Thank you for providing the support resources for each performance gap. Let me analyze this information:\n\nThe support resources you've provided are generally well-defined, but I have a few observations:\n\n1. There appears to be some inconsistency in names. In the support resources, you mention \"Indulekha\" while the PIP is for \"Marvin Chin\". This might need clarification to ensure the resources are correctly aligned with the employee in question.\n\n2. The support resources for the first two performance gaps are identical. While this may be appropriate if the same type of support applies to both areas, it's worth considering if there are any specific resources that might be more tailored to each distinct performance gap.\n\n3. For \"Lack of Engagement in Squad-Related Production Issue Discussions,\" you've included job shadowing with Reshma, which is a good specific resource for that particular gap.\n\nWould you like to refine any of the support resources before we generate the final PIP document?"
       },
       {
         "role": "human",
@@ -423,15 +423,7 @@
       },
       {
         "role": "ai",
-        "content": "Thank you for providing all the necessary information for Marvin Chin's Performance Improvement Plan. I've now collected comprehensive details on:\n\n1. Employee Information:\n   - Employee: Marvin Chin\n   - Role: AI Engineer\n   - Department: AI\n   - Manager: Sarah\n\n2. Performance Gaps:\n   - Gap 1: Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation\n   - Gap 2: Lack of Proactiveness in Handling Cypress Maintenance and Regression Delays\n   - Gap 3: Lack of Engagement in Squad-Related Production Issue Discussions\n\n3. Improvement Plans:\n   - Detailed goals with specific timelines for each gap (3 months for gaps 1 and 3, 1 month for gap 2)\n   - Specific actionable steps with deadlines for each improvement area\n\n4. Support Resources:\n   - Mentorship from Umithra and Mee Yun\n   - Technical consultation with Mark O'Donnell\n   - Job shadowing with Reshma for production issue handling\n\nAll the information has been documented and analyzed thoroughly. The performance improvement plan includes SMART goals, clear timelines, specific actionable steps, and appropriate support resources for each identified performance gap.\n\nIs there anything else you'd like to discuss or any other information you'd like to add to Marvin's Performance Improvement Plan?"
-      },
-      {
-        "role": "human",
-        "content": "nope"
-      },
-      {
-        "role": "ai",
-        "content": "Thank you for confirming. You've successfully completed gathering all the necessary information for Marvin Chin's Performance Improvement Plan. The plan now includes comprehensive details about:\n\n- Employee information\n- Three clearly defined performance gaps with specific examples\n- Well-structured improvement goals with timelines\n- Detailed actionable steps for each improvement area\n- Appropriate support resources to help Marvin succeed\n\nThis information provides a solid foundation for the PIP document. The plan addresses the key areas where improvement is needed while providing Marvin with clear expectations and the support necessary to meet those expectations.\n\nIf you need any changes to this PIP in the future or if you'd like to create another PIP document for a different employee, please feel free to let me know. I'm here to assist with your HR documentation needs."
+        "content": "# PERFORMANCE IMPROVEMENT PLAN\n\n**Date:** [Current Date]\n\n**Employee:** Marvin Chin  \n**Position:** AI Engineer  \n**Department:** AI  \n**Manager:** Sarah\n\n## INTRODUCTION\n\nThis Performance Improvement Plan (PIP) has been developed to address specific performance concerns and provide a structured approach to help Marvin Chin succeed in his role as an AI Engineer. The plan will be in effect for 3 months, during which progress will be regularly monitored and evaluated.\n\n## PERFORMANCE AREAS REQUIRING IMPROVEMENT\n\n### 1. Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation\n\n**Current Performance:**  \nThroughout Q4, there were no regular progress updates provided until specifically requested. This lack of initiative in communicating progress made it difficult to assess the status of the project and delayed decision-making.\n\n**Specific Examples:**  \nOn November 12, 2024, during a catch-up call, concerns were raised about the lack of progress on the visual automation tool evaluation. Instructions were given to create a comparison sheet documenting the tools tested with must-have features. By November 15, 2024, the comparison sheet was still not completed, requiring a reminder via Slack.\n\n**Expected Performance:**  \nThe expected performance is to evaluate and finalize the visual automation tool by the end of Q4. During the evaluation, proactively communicate with vendors and team members to ensure milestones are met. As a team lead, address technical challenges and provide regular, concise, and accurate progress updates. By the end of Q4, complete the evaluation and select a visual automation tool based on the outcome.\n\n### 2. Lack of Proactiveness in Handling Cypress Maintenance and Regression Delays\n\n**Current Performance:**  \nA significant number of automation tests failed in the regression tests for tags V20241112_0, V20241216_0, and V20241204_0 without proactive action to address these issues, resulting in delayed regression testing and impacted release timelines.\n\n**Specific Examples:**  \nOn November 11th and 12th, 2024, concerns were raised in Slack about recurring flaky automation failures, which were causing delays in the regression process. A concrete plan to address and resolve these issues was requested with a 1-month timeline, which was not met.\n\n**Expected Performance:**  \nThe expected performance is to ensure the Cypress automation for regression runs smoothly without flaky failures that could cause delays and lead to missing release cutoff times. As the team lead, assist the team in investigating and resolving issues when they encounter a high volume of failures.\n\n### 3. Lack of Engagement in Squad-Related Production Issue Discussions\n\n**Current Performance:**  \nInsufficient participation in squad-related production issue discussions, particularly during critical incidents.\n\n**Specific Examples:**  \nOn November 11, 2024, during the incident #incident_twillio-tajikistan-issue-11-nov-2024, there was no participation in the incident channel, despite being part of the Squad User Profile Management. This lack of involvement led to other team members having to step in and assist, delaying the resolution process.\n\n**Expected Performance:**  \nThe expected performance is to actively participate in all squad discussions related to production issues and contribute effectively to QA problem resolution during incidents. Take ownership of QA tasks, ensuring that production fixes are investigated, scenarios are prioritized for automation where possible, and issues are resolved with the highest urgency to meet release deadlines.\n\n## IMPROVEMENT GOALS AND ACTION PLANS\n\n### 1. Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation\n\n**Goal:**  \nFinalize the vendor evaluation and share the decision by January 17, 2025. Achieve 100% of visual automation in Trader's Hub smoke test by February 28, 2025.\n\n**Timeline:** 3 months\n\n**Action Steps:**\n- Set reminder and provide weekly updates on research and migration progress in #project_automated_testing starting immediately after vendor finalization\n- Create a dashboard to track the weekly migration progress with the new tool\n- Review PRs on new tool migration and provide constructive feedback aligned with documented best practices\n- Document best practices and create a guideline for using the new tool by January 24, 2025\n- Develop and share a migration plan from Cypress Percy to the new low-code tool by January 31, 2025\n- Begin weekly Zoom knowledge-sharing sessions on the new tool for all QA team members starting after vendor finalization, ensuring at least five recorded sessions by end of March 2025\n- Address and resolve team members' questions about the new tool in the #need_help_<new_tool_name> channel starting two weeks after tool finalization\n- Submit the 2x2 QA monthly report for January 2025 detailing progress, challenges, and mitigating actions\n\n### 2. Lack of Proactiveness in Handling Cypress Maintenance and Regression Delays\n\n**Goal:**  \nEnsure that no release cut-off times are missed due to automation issues during this period. This includes preventing production bugs caused by skipping automation failures and, consequently, missing manual testing.\n\n**Timeline:** 1 month\n\n**Action Steps:**\n- Develop a guideline outlining the to-do steps when seeing a Cypress failure in regression by January 24, 2025\n- Monitor every regression channel daily and actively participate in discussions related to automation issues and solutions\n- Ensure that no effort is spent on updating the Cypress test if the code update requires more than 5 minutes of work\n\n### 3. Lack of Engagement in Squad-Related Production Issue Discussions\n\n**Goal:**  \nTake full ownership of QA P2P-related tasks during production incidents, providing progress updates within 24 hours of each incident. Additionally, submit a detailed monthly report that reviews squad production issues and highlights contributions to QA resolutions. Manage all squad P2P-related manual and automation tasks, ensuring no task remains unattended for more than 2 days.\n\n**Timeline:** 3 months\n\n**Action Steps:**\n- Follow up on the bug mentioned in the Slack thread (https://deriv-group.slack.com/archives/C0124FT6URM/p1735289297468999) and ensure it is resolved by January 10th\n- Set a timer to monitor updates in the \"Announce\" bug and the P2P channel\n- Create a monthly production issue report\n\n## SUPPORT RESOURCES AND TOOLS\n\n### For \"Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation\":\n- Biweekly mentorship and check-ins with Umithra and Mee Yun to review progress, provide constructive feedback, and offer guidance for improvement\n- Consultation with Mark O'Donnell for advice on technical problems and recommendations for appropriate approaches\n\n### For \"Lack of Proactiveness in Handling Cypress Maintenance and Regression Delays\":\n- Biweekly mentorship and check-ins with Umithra and Mee Yun to review progress, provide constructive feedback, and offer guidance for improvement\n- Consultation with Mark O'Donnell for advice on technical problems and recommendations for appropriate approaches\n\n### For \"Lack of Engagement in Squad-Related Production Issue Discussions\":\n- Biweekly feedback sessions from Mee Yun to review progress, provide constructive feedback, and offer guidance for improvement\n- Job shadowing with Reshma on production issue handling in #announce_bugs_usability_issues channel\n\n## MONITORING AND EVALUATION PROCESS\n\nProgress will be monitored through:\n- Biweekly check-in meetings with Sarah to review progress on each improvement goal\n- Daily monitoring of Slack channels and project updates\n- Review of weekly update submissions and adherence to timelines\n- Monthly evaluation of overall performance improvement\n\n## CONCLUSION\n\nThis Performance Improvement Plan will be in effect for the next 3 months. Successful completion of the PIP requires meeting all improvement goals and consistently demonstrating the expected performance in each identified area. \n\nFailure to achieve the expected improvements within the specified timeline may result in further disciplinary action, up to and including termination of employment.\n\nWe are committed to providing the necessary support to help you succeed in this improvement process. Please feel free to discuss any questions or concerns regarding this plan with your manager, Sarah.\n\n-------------------------------\n\n**Employee Acknowledgment:**\n\nI have read and understand the terms of this Performance Improvement Plan. I commit to making the necessary improvements as outlined in this document.\n\n________________________      ________________\nMarvin Chin                    Date\n\n________________________      ________________\nSarah, Manager                 Date"
       }
     ]
   }

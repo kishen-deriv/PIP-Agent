@@ -21,6 +21,7 @@ from tools.employee_info_extractor import EmployeeInfoExtractorTool
 from tools.performance_gap_analyzer import PerformanceGapAnalyzerTool
 from tools.improvement_plan_analyzer import ImprovementPlanAnalyzerTool
 from tools.support_resources_identifier import SupportResourcesIdentifierTool
+from tools.comprehensive_pip_generator import ComprehensivePIPGeneratorTool
 
 # Load environment variables
 load_dotenv()
@@ -59,7 +60,7 @@ def save_conversation_memory(thread_id, memory_data):
     except Exception as e:
         print(f"Error saving memory: {e}")
 
-def chat_with_memory(user_input, thread_id="test-thread"):
+def chat_with_memory(user_input, thread_id="default"):
     """Chat with the agent using persistent memory"""
     # Initialize model using ChatOpenAI with LiteLLM proxy
     model = ChatOpenAI(
@@ -76,7 +77,8 @@ def chat_with_memory(user_input, thread_id="test-thread"):
     performance_gap_tool = PerformanceGapAnalyzerTool()
     improvement_plan_tool = ImprovementPlanAnalyzerTool()
     support_resources_tool = SupportResourcesIdentifierTool()
-    tools = [employee_info_tool, performance_gap_tool, improvement_plan_tool, support_resources_tool]
+    comprehensive_pip_tool = ComprehensivePIPGeneratorTool()
+    tools = [employee_info_tool, performance_gap_tool, improvement_plan_tool, support_resources_tool, comprehensive_pip_tool]
     
     # Create agent with tools
     agent_executor = create_react_agent(model, checkpointer=memory, tools=tools)
