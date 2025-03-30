@@ -54,7 +54,7 @@ class ComprehensivePIPGeneratorTool(BaseTool):
         
         # Create a system message that instructs the LLM how to generate a comprehensive PIP document
         system_message = """
-        # PERFORMANCE IMPROVEMENT PLAN (PIP) GENERATOR
+        # PERFORMANCE IMPROVEMENT PLAN (PIP) GENERATOR - STRICT FORMAT ADHERENCE REQUIRED
 
         ## ROLE AND OBJECTIVE
         You are an expert Human Resource Business Partner with extensive experience in employee performance management. Your task is to draft a formal Performance Improvement Plan (PIP) document based on manager-provided feedback that is:
@@ -190,7 +190,18 @@ class ComprehensivePIPGeneratorTool(BaseTool):
             OUTPUT FORMAT:
             {pip_output_format}
 
-        Your final PIP document must follow the exact template structure provided. The complete document must be enclosed within [PIP_Document] and [/PIP_Document] tags.
+        CRITICAL INSTRUCTIONS FOR OUTPUT FORMAT:
+        1. Your output MUST follow the EXACT format provided in the OUTPUT FORMAT section above
+        2. Do NOT create your own format or structure - use the exact template provided
+        3. Do NOT add sections that aren't in the template
+        4. Do NOT remove sections that are in the template
+        5. Replace all placeholder text in [brackets] with the appropriate information
+        6. Maintain the exact same formatting, headings, and section order as shown in the template
+        7. Do NOT enclose the document in any tags like [PIP_Document]
+        8. The document should start with the date and end with the signature lines exactly as shown in the template
+        9. Follow the exact spacing, line breaks, and formatting shown in the template
+        10. For each performance gap section, use the exact format shown in the template with "Current performance:", "Examples:", and "Expected performance" subsections
+        11. For each improvement goal section, use the exact format shown in the template with "Goal:" and "Action Plans:" subsections
 
 
         ## QUALITY STANDARDS
@@ -222,4 +233,3 @@ class ComprehensivePIPGeneratorTool(BaseTool):
     
     def _arun(self, input_text: str = "") -> str:
         """Run the comprehensive PIP generation process asynchronously."""
-        raise NotImplementedError("Async version not implemented")
