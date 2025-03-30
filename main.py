@@ -1,74 +1,149 @@
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 import os
+import time
 from datetime import datetime
 from dotenv import load_dotenv
-from src.agent import Leo, langfuse
-from prompts.output_format import pip_output_format
+from src.agent import chat_with_memory
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 from aws_deploy.aws_secrets import get_secrets
+from langfuse import Langfuse
+
+# Set to track recently processed messages to avoid duplicates
+processed_messages = set()
 
 # Load environment variables
-load_dotenv()
+#load_dotenv()
 
 # Initialize Slack app - remove signing_secret as it's not needed for Socket Mode
 # app = App(token=os.getenv("SLACK_BOT_TOKEN"))
-app = App(token=get_secrets("SLACK_BOT_TOKEN"))
+slack_token = get_secrets("SLACK_BOT_TOKEN")
+app = App(token=slack_token)
+client = WebClient(token=slack_token)
 
-# Define the specific private channel ID where the bot should respond
-# This should be set in your .env file
-# ALLOWED_PRIVATE_CHANNEL_ID = os.getenv("ALLOWED_PRIVATE_CHANNEL_ID")
-ALLOWED_PRIVATE_CHANNEL_ID = get_secrets("ALLOWED_PRIVATE_CHANNEL_ID")
-
-# Initialize the Enhanced PIP generator
-pip_generator = Leo()
+# Initialize Langfuse
+langfuse = Langfuse(
+    secret_key=get_secrets("LANGFUSE_SECRET_KEY"),
+    public_key=get_secrets("LANGFUSE_PUBLIC_KEY"),
+    host=get_secrets("LANGFUSE_HOST")
+)
 
 @app.event("app_mention")
 def handle_app_mention_events(body, say):
     """Handle when the bot is mentioned"""
-    # Check if the mention is from the allowed private channel
-    channel_id = body.get("event", {}).get("channel")
-    user_id = body.get("event", {}).get("user")
+    # Get channel and user info
+    event = body.get("event", {})
+    channel_id = event.get("channel")
+    user_id = event.get("user")
+    message_text = event.get("text", "")
+    message_ts = event.get("ts")
+    
+    # Create a unique identifier for this message
+    message_id = f"{channel_id}:{message_ts}"
+    
+    # Skip if we've already processed this message
+    if message_id in processed_messages:
+        print(f"Skipping already processed message: {message_id}")
+        return
+    
+    # Add to processed messages
+    processed_messages.add(message_id)
+    
+    # Get thread_ts if the message is part of a thread
+    thread_ts = event.get("thread_ts")
     
     # Create a trace for the app mention event
     trace = langfuse.trace(
         name="app_mention",
         user_id=user_id,
         metadata={
-            "channel_id": channel_id
+            "channel_id": channel_id,
+            "in_thread": thread_ts is not None
         }
     )
     
-    #if channel_id == Config.ALLOWED_PRIVATE_CHANNEL_ID:
-    if channel_id == ALLOWED_PRIVATE_CHANNEL_ID:
-        say("""Hello! 👋 I'm Leo. Here's what I can do:
-
-                • Use `/generate-pip` command to create a Performance Improvement Plan document
-                • I'll guide you through a form where you can input employee details and performance information
-                • My enhanced pipeline approach breaks down the PIP generation into specialized steps for better results
-
-                To get started, just type `/generate-pip` in the chat!"""
+    # Log the mention event for debugging
+    print(f"Mention received from user {user_id} in channel {channel_id}")
+    print(f"Message text: {message_text}")
+    
+    # Only respond to DMs (im) or App Home
+    channel_type = event.get("channel_type")
+    if channel_type == "im" or channel_type == "app_home":
+        # Add eyes emoji reaction to show we're processing
+        message_ts = event.get("ts")
+        try:
+            client.reactions_add(
+                channel=channel_id,
+                name="eyes",
+                timestamp=message_ts
             )
+        except SlackApiError as e:
+            print(f"Error adding reaction: {e}")
+        # Always respond in a thread
+        # If message is already in a thread, use that thread_ts
+        # If not, create a new thread using the message's ts
+        thread_ts_to_use = thread_ts if thread_ts else event.get("ts")
+        
+        # Generate a response using the agent
+        # Use thread_ts_to_use to ensure each thread has its own conversation memory
+        thread_id = f"slack-{channel_id}-{thread_ts_to_use}"
+        response = chat_with_memory(message_text, thread_id=thread_id)
+        
+        # Remove eyes emoji reaction before sending response
+        try:
+            client.reactions_remove(
+                channel=channel_id,
+                name="eyes",
+                timestamp=message_ts
+            )
+        except SlackApiError as e:
+            print(f"Error removing reaction: {e}")
+            
+        say(text=response, channel=channel_id, thread_ts=thread_ts_to_use)
+        
+        print(f"Response sent to channel {channel_id}")
+        
         trace.event(
-                name="response_sent",
-                level="DEFAULT",
-                message="welcome_message"
-            )
+            name="response_sent",
+            level="DEFAULT",
+            message="agent_response"
+        )
     else:
+        # Log that we're not responding to this channel type
+        print(f"Not responding to mention in channel type: {channel_type}")
         trace.event(
-            name="unauthorized_channel",
-            level="WARNING",
-            message=f"Unauthorized channel: {channel_id}"
+            name="no_response_channel_type",
+            level="DEFAULT",
+            message=f"Not responding to channel type: {channel_type}"
         )
 
 @app.event("message")
-def handle_message_events(message, say):
+def handle_message_events(body, say):
     """Handle direct messages to the bot"""
-    # Get the channel ID from the message
-    channel_id = message.get('channel')
-    user_id = message.get('user')
-    message_text = message.get('text', '')
+    # Get the message details
+    event = body.get("event", {})
+    channel_id = event.get("channel")
+    user_id = event.get("user")
+    message_text = event.get("text", "")
+    message_ts = event.get("ts")
+    
+    # Create a unique identifier for this message
+    message_id = f"{channel_id}:{message_ts}"
+    
+    # Skip if we've already processed this message
+    if message_id in processed_messages:
+        print(f"Skipping already processed message: {message_id}")
+        return
+    
+    # Add to processed messages
+    processed_messages.add(message_id)
+    
+    # Get thread_ts if the message is part of a thread
+    thread_ts = event.get("thread_ts")
+    
+    # Log the message for debugging
+    print(f"Message received: '{message_text}' from user {user_id} in channel {channel_id}")
     
     # Create a trace for the message event
     trace = langfuse.trace(
@@ -76,265 +151,77 @@ def handle_message_events(message, say):
         user_id=user_id,
         metadata={
             "channel_id": channel_id,
-            "contains_leo": "Leo" in message_text.lower()
+            "message_text": message_text,
+            "in_thread": thread_ts is not None
         }
     )
     
-    # Only respond if the message is from the allowed private channel
-    if channel_id == ALLOWED_PRIVATE_CHANNEL_ID and "Leo" in message_text.lower():
-        say("""Hello! 👋 I'm Leo. Here's what I can do:
-
-• Use `/generate-pip` command to create a Performance Improvement Plan document
-• I'll guide you through a form where you can input employee details and performance information
-• My enhanced pipeline approach breaks down the PIP generation into specialized steps for better results
-
-To get started, just type `/generate-pip` in the chat!""")
+    # Only respond to DMs (im) or App Home
+    channel_type = event.get("channel_type")
+    if channel_type == "im" or channel_type == "app_home":
+        # Skip messages from bots to prevent loops
+        if event.get("bot_id"):
+            return
+            
+        # Add eyes emoji reaction to show we're processing
+        message_ts = event.get("ts")
+        try:
+            client.reactions_add(
+                channel=channel_id,
+                name="eyes",
+                timestamp=message_ts
+            )
+        except SlackApiError as e:
+            print(f"Error adding reaction: {e}")
+            
+        # Always respond in a thread
+        # If message is already in a thread, use that thread_ts
+        # If not, create a new thread using the message's ts
+        thread_ts_to_use = thread_ts if thread_ts else event.get("ts")
+        
+        # Generate a response using the agent
+        # Use thread_ts_to_use to ensure each thread has its own conversation memory
+        thread_id = f"slack-{channel_id}-{thread_ts_to_use}"
+        response = chat_with_memory(message_text, thread_id=thread_id)
+        
+        # Remove eyes emoji reaction before sending response
+        try:
+            client.reactions_remove(
+                channel=channel_id,
+                name="eyes",
+                timestamp=message_ts
+            )
+        except SlackApiError as e:
+            print(f"Error removing reaction: {e}")
+            
+        say(text=response, channel=channel_id, thread_ts=thread_ts_to_use)
+        
+        print(f"Response sent to channel {channel_id}")
+        
         trace.event(
             name="response_sent",
             level="DEFAULT",
-            message="welcome_message"
+            message="agent_response"
         )
     else:
+        # Log that we're not responding to this channel type
+        print(f"Not responding to message in channel type: {channel_type}")
         trace.event(
-            name="no_response_needed",
+            name="no_response_channel_type",
             level="DEFAULT",
-            message="message_ignored"
+            message=f"Not responding to channel type: {channel_type}"
         )
 
-@app.command("/generate-pip")
-def handle_pip_command(ack, body, client):
-    """Handle the /generate-pip slash command"""
-    # Always acknowledge the command to prevent timeout
-    ack()
-    
-    # Get the channel ID from the command
-    channel_id = body.get("channel_id")
-    user_id = body.get("user_id")
-    
-    # Create a trace for the command
-    trace = langfuse.trace(
-        name="generate_pip_command",
-        user_id=user_id,
-        metadata={
-            "channel_id": channel_id
-        }
-    )
-    
-    # Only process if the command is from the allowed private channel
-    if channel_id == ALLOWED_PRIVATE_CHANNEL_ID:
-        # Open a modal to collect PIP information
-        try:
-            client.views_open(
-                trigger_id=body["trigger_id"],
-                view={
-            "type": "modal",
-            "callback_id": "pip_submission",
-            "title": {"type": "plain_text", "text": "Generate PIP"},
-            "submit": {"type": "plain_text", "text": "Submit"},
-            "blocks": [
-                {
-                    "type": "section",
-                    "text": {
-                        "type": "mrkdwn",
-                        "text": "*Leo*\nUses a specialized pipeline approach to create comprehensive PIP documents."
-                    }
-                },
-                {
-                    "type": "input",
-                    "block_id": "pip_input_block",
-                    "element": {
-                        "type": "plain_text_input",
-                        "multiline": True,
-                        "action_id": "pip_input"
-                    },
-                    "label": {"type": "plain_text", "text": "Enter PIP details"}
-                },
-                {
-                    "type": "section",
-                    "text": {
-                        "type": "mrkdwn",
-                        "text": "Choose generation method:"
-                    }
-                },
-                {
-                    "type": "actions",
-                    "block_id": "generation_method",
-                    "elements": [
-                        {
-                            "type": "radio_buttons",
-                            "action_id": "pipeline_choice",
-                            "options": [
-                                {
-                                    "text": {
-                                        "type": "plain_text",
-                                        "text": "Simple (recommended)"
-                                    },
-                                    "value": "simple"
-                                },
-                                {
-                                    "text": {
-                                        "type": "plain_text",
-                                        "text": "Pipeline"
-                                    },
-                                    "value": "pipeline"
-                                }
-                            ],
-                            "initial_option": {
-                                "text": {
-                                    "type": "plain_text",
-                                    "text": "Simple (recommended)"
-                                },
-                                "value": "simple"
-                            }
-                        }
-                    ]
-                }
-            ]
-                }
-            )
-            trace.event(
-                name="modal_opened",
-                level="DEFAULT",
-                message="Modal opened successfully"
-            )
-        except Exception as e:
-            error_msg = f"Error opening modal: {str(e)}"
-            trace.event(
-                name="modal_error",
-                level="ERROR",
-                message=error_msg
-            )
-    else:
-        trace.event(
-            name="unauthorized_channel",
-            level="WARNING",
-            message=f"Unauthorized channel: {channel_id}"
-        )
-
-@app.view("pip_submission")
-def handle_pip_submission(ack, body, client, view):
-    """Handle the submission of the PIP modal"""
-    ack()
-    
-    user_id = body["user"]["id"]
-    
-    # Create a trace for the submission
-    trace = langfuse.trace(
-        name="pip_submission",
-        user_id=user_id,
-        metadata={
-            "submission_type": "pip_form"
-        }
-    )
-    
-    try:
-        # Get the input from the modal
-        pip_input = view["state"]["values"]["pip_input_block"]["pip_input"]["value"]
-        
-        # Get the generation method choice
-        generation_method = view["state"]["values"]["generation_method"]["pipeline_choice"]["selected_option"]["value"]
-        use_pipeline = generation_method == "pipeline"
-        
-        trace.event(
-            name="submission_details",
-            level="DEFAULT",
-            metadata={
-                "input_length": len(pip_input),
-                "generation_method": generation_method
-            }
-        )
-        
-        # Generate the PIP document
-        generation_span = trace.span(
-            name="generate_pip_document",
-            input={
-                "input_length": len(pip_input),
-                "use_pipeline": use_pipeline
-            }
-        )
-        
-        pip_document = pip_generator.generate_pip(
-            pip_input_form=pip_input,
-            pip_output_format=pip_output_format,
-            use_pipeline=use_pipeline
-        )
-        
-        generation_span.end(output={"document_length": len(pip_document)})
-        
-        # Get the requestor's name from the user info
-        user_info = client.users_info(user=user_id)
-        requestor_name = user_info["user"]["real_name"]
-        
-        # Save the document for reference with requestor name in filename
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"pip_document_{timestamp}.txt"
-        output_path = f"output/{filename}"
-        
-        # Add requestor information to the document
-        pip_document_with_requestor = f"Generated by: {requestor_name}\n\n{pip_document}"
-        
-        save_span = trace.span(name="save_document")
-        pip_generator.save_pip(pip_document_with_requestor, output_path)
-        save_span.end()
-        
-        # Send as a file attachment
-        method_text = "pipeline" if use_pipeline else "simple"
-        message = f"Here's your generated PIP document <@{requestor_name}>:"
-        
-        # Create a WebClient instance using the bot token
-        #slack_client = WebClient(token=os.getenv("SLACK_BOT_TOKEN"))
-        slack_client = WebClient(token=get_secrets("SLACK_BOT_TOKEN"))
-
-        # First, write the content to a temporary file
-        with open(output_path, 'r') as file:
-            file_content = file.read()
-        
-        # Upload the file to Slack using the files_upload_v2 method from slack_sdk
-        try:
-            upload_span = trace.span(name="upload_file_to_slack")
-            result = slack_client.files_upload_v2(
-                channel=ALLOWED_PRIVATE_CHANNEL_ID,
-                title=f"PIP Document - {timestamp}",
-                filename=filename,
-                file=output_path,
-                initial_comment=message
-            )
-            upload_span.end()
-            
-            trace.event(
-                name="file_upload",
-                level="DEFAULT",
-                message="File uploaded successfully",
-                metadata={"file_id": result.get("file", {}).get("id")}
-            )
-            print(f"File uploaded successfully: {result}")
-        except SlackApiError as e:
-            error_msg = f"Error uploading file: {e}"
-            print(error_msg)
-            trace.event(
-                name="file_upload_error",
-                level="ERROR",
-                message=error_msg
-            )
-            # Fallback to chat_postMessage if file upload fails
-            slack_client.chat_postMessage(
-                channel=ALLOWED_PRIVATE_CHANNEL_ID,
-                text=f"Error uploading PIP document {requestor_name}: {str(e)}\n\nHere's the document content:\n\n```\n{pip_document_with_requestor}\n```"
-            )
-        
-    except Exception as e:
-        error_msg = f"Error generating PIP document: {str(e)}"
-        trace.event(
-            name="generation_error",
-            level="ERROR",
-            message=error_msg
-        )
-        client.chat_postMessage(
-            channel=ALLOWED_PRIVATE_CHANNEL_ID,  # Use the allowed channel ID
-            text=error_msg
-        )
 
 if __name__ == "__main__":
+    # Print startup message
+    print("Starting Leo PIP Agent bot...")
+    print("Bot will only respond to DMs and App Home, not in channels")
+    
+    # Limit the size of the processed_messages set to avoid memory issues
+    # This will be enough to prevent duplicates within a reasonable time window
+    MAX_PROCESSED_MESSAGES = 1000
+    
     # Replace app.start() with SocketModeHandler
     handler = SocketModeHandler(
         app=app,

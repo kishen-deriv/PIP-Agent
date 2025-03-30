@@ -346,5 +346,165 @@
         "content": "Here is the Performance Improvement Plan for Marvin Chin:\n\n[Date]\n\nMarvin Chin\n[Address Line 1]\n[Address Line 2]\n[Address Line 3]\n\nDear Marvin,\n\nRe: AI Engineer, Performance Improvement Plan \n\nWe are writing to you regarding your performance as a AI Engineer and to outline a Performance Improvement Plan (PIP) designed to address specific areas of concern. The purpose of this plan is to provide you with clear guidance and support to help you succeed in your role.\n\nWe have identified several key areas where your performance has fallen short of expectations:\n\nPerformance Areas Requiring Improvement:\n\n1. Progress on Assigned Tasks and Timely Communication\n\nCurrent performance:\nRegular progress updates were not consistently provided on assigned projects until specifically requested, which has impacted the team's ability to track project status and make timely decisions.\n\nExamples:\nThroughout Q4, no regular progress updates were provided on the visual automation tool evaluation until specifically requested. On November 12, 2024, during a catch-up call, concerns were raised about the lack of progress, and instructions were given to create a clear comparison sheet documenting the tools tested. An example comparison sheet was provided for reference, and the need for consistent progress updates every Thursday or Friday was emphasized. By November 15, 2024, the comparison sheet remained incomplete, prompting a reminder via Slack reiterating the requirement for consistent updates by the end of each Thursday, which was acknowledged.\n\nExpected performance:\n\nAs a AI Engineer for the AI team, you were expected to evaluate and finalize the visual automation tool by the end of Q4, proactively communicate with vendors and team members to ensure milestones are met, address technical challenges, and provide regular, concise, and accurate progress updates without being prompted.\n\n2. Proactiveness in Addressing Issues\n\nCurrent performance:\nTechnical issues that affected regression testing were not proactively addressed, resulting in delays that impacted release timelines.\n\nExamples:\nA significant number of automation tests failed in the regression tests for tags V20241112_0, V20241216_0, and V20241204_0, and no proactive action was taken to address these issues. On November 11th and 12th, 2024, concerns were raised in Slack about the recurring flaky automation failures causing delays in the regression process. A request was made for a concrete plan to address and resolve these issues, which was acknowledged with a promise to work on improving the reliability of the tests moving forward. The timeline for accomplishing a concrete plan on resolving recurring flaky automation failures was 1 month, which was not met.\n\nExpected performance:\n\nAs a AI Engineer for the AI team, you were expected to ensure the Cypress automation for regression runs smoothly without flaky failures that could cause delays and lead to missing the release cutoff time. As the team lead, you were also expected to assist the team in investigating and resolving issues when they encounter a high volume of failures.\n\n\n\nNext steps on expected improvements:\n\nProgress on Assigned Tasks and Timely Communication\n\nGoal: Finalize the vendor evaluation and share the decision by 17 Jan 2025.\n\nAction Plans:\nSet reminder and provide weekly updates on research and migration progress in #project_automated_testing starting immediately after vendor finalization.\nCreate a dashboard to track the weekly migration progress with the new tool.\nReview PRs on new tool migration and provide constructive feedback aligned with documented best practices.\nDocument best practices and create a guideline for using the new tool by 24 Jan 2025.\nDevelop and share a migration plan from Cypress Percy to the new low-code tool by 31 Jan 2025.\nBegin weekly Zoom knowledge-sharing sessions on the new tool for all QA team members starting after vendor finalization, ensuring at least five recorded sessions by end of March 2025.\nAddress and resolve team members' questions about the new tool in the #need_help_<new_tool_name> channel starting two weeks after tool finalization.\nSubmit the 2x2 QA monthly report for January 2025 detailing progress, challenges, and mitigating actions.\n\nProactiveness in Addressing Issues\n\nGoal: Ensure that no release cut-off times are missed due to automation issues within 1 month.\n\nAction Plans:\nDevelop a detailed strategy plan to address and reduce automation test failures, and share the completed regression strategy document by January 31, 2025.\nMonitor every regression channel daily and actively participate in discussions related to automation issues and solutions.\nDevelop a guideline on outline the to-do step when seeing a Cypress failure in regression by 24 Jan 2025.\nMonitor every regression channel daily and actively participate in discussions related to automation issues and solutions.\nEnsure that no effort is spent on updating the Cypress test if the code update requires more than 5 minutes of work.\n\nTo support your improvement efforts, we will provide:\n\n- Biweekly mentorship and check-ins with Umithra and Mee Yun to review Indulekha's initial progress, provide constructive feedback, and offer guidance for improvement.\n- Consultation with Mark O'Donnell for advice on technical problems and recommendations for appropriate approaches.\n\nWe will monitor your performance for the next 90 days and conduct fortnightly reviews, involving your reporting manager and HRBP to assess your progress and provide feedback.\n\nIt is crucial that you demonstrate consistent improvement and meet the outlined objectives by the end of the PIP period. Should you fail to improve your work performance to an acceptable level, the company may, at its sole discretion, have no option but to terminate your employment contract.\n\nWe are confident in your ability to make the necessary improvements and are committed to supporting your success. Please do not hesitate to reach out if you need any clarification or additional support during this process.\n\n\n\nSincerely,\n\n\n\n\nSarah\nManager\n_______________________________________________________________________\n\nI, Marvin Chin, I.D./I.C./Passport No.: [identification number] hereby confirm receipt of a copy of this Performance Improvement Plan and agree to comply with its contents.\n\n\n\n\n_______________ \n\nDate:"
       }
     ]
+  },
+  "slack-D08JACQTKFB-1743367351.640509": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, and I can help you with creating Performance Improvement Plan (PIP) documents. If you need assistance with developing a PIP for an employee, just let me know and I'll guide you through the process."
+      },
+      {
+        "role": "human",
+        "content": "how u doing"
+      },
+      {
+        "role": "ai",
+        "content": "I'm doing well, thank you for asking! I'm ready to assist you with any Performance Improvement Plan needs you might have. Whether you're looking to create a new PIP document or have questions about the process, I'm here to help. Is there something specific about PIPs I can help you with today?"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743367380.166289": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hello"
+      },
+      {
+        "role": "ai",
+        "content": "Hi there! I'm Leo, an HR assistant who can help you create a Performance Improvement Plan (PIP) document. I can guide you through the process of documenting performance concerns, setting improvement goals, and outlining support resources. Let me know when you're ready to get started."
+      },
+      {
+        "role": "human",
+        "content": "how u doing"
+      },
+      {
+        "role": "ai",
+        "content": "I'm doing well, thanks for asking! I'm here and ready to assist you with creating a Performance Improvement Plan whenever you need. Is there something specific you'd like help with today?"
+      },
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, here to help with Performance Improvement Plan creation. Just let me know when you're ready to start working on a PIP document, and I'll guide you through the process."
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743369248.667189": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, and I can help you create Performance Improvement Plan (PIP) documents. When you're ready to create a PIP, just let me know and I'll guide you through the process step by step. How can I assist you today?"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743369261.906079": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, and I can help you create Performance Improvement Plan (PIP) documents. When you're ready to create a PIP, just let me know and I'll guide you through the process step by step. How can I assist you today?"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743369425.844959": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, and I can help you create Performance Improvement Plan (PIP) documents. When you're ready to create a PIP, just let me know and I'll guide you through the process step by step. How can I assist you today?"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743369445.620849": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, and I can help you create Performance Improvement Plan (PIP) documents. When you're ready to create a PIP, just let me know and I'll guide you through the process step by step. How can I assist you today?"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743369607.601339": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, and I can help you create Performance Improvement Plan (PIP) documents. When you're ready to create a PIP, just let me know and I'll guide you through the process step by step. How can I assist you today?"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743369630.735799": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, and I can help you create Performance Improvement Plan (PIP) documents. When you're ready to create a PIP, just let me know and I'll guide you through the process step by step. How can I assist you today?"
+      },
+      {
+        "role": "human",
+        "content": "how are u"
+      },
+      {
+        "role": "ai",
+        "content": "I'm doing well, thank you for asking! I'm here and ready to help you with creating a Performance Improvement Plan document whenever you need it. Is there something specific about PIPs that you'd like to know about, or would you like to start creating one?"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743369688.311239": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, and I can help you create Performance Improvement Plan (PIP) documents. When you're ready to create a PIP, just let me know and I'll guide you through the process step by step. How can I assist you today?"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743369713.290949": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "are u good"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! Yes, I'm here to help you. I can assist with creating Performance Improvement Plan (PIP) documents when needed. If you'd like to create a PIP or have any questions about the process, just let me know and I'll be happy to guide you through it."
+      },
+      {
+        "role": "human",
+        "content": "nice to hear that"
+      },
+      {
+        "role": "ai",
+        "content": "I'm glad to hear that! If you have any questions about Performance Improvement Plans or would like assistance with creating one in the future, just let me know. I'm here to help whenever you're ready."
+      }
+    ]
   }
 }
