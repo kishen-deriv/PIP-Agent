@@ -4,6 +4,4 @@ services:
   pip_slack_bot:
     build: .
     container_name: pip_slack_bot
-    volumes:
-      - ./output:/app/output
     restart: unless-stopped

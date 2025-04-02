@@ -43,7 +43,7 @@ class ComprehensivePIPGeneratorTool(BaseTool):
         
         # Import here to avoid circular import
         from src.agent import load_conversation_memory
-        conversation_memory = load_conversation_memory("test-thread")
+        conversation_memory = load_conversation_memory("default")
         conversation_history = ""
         
         # Convert conversation memory to a string
@@ -86,13 +86,17 @@ class ComprehensivePIPGeneratorTool(BaseTool):
             - Instead of "Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation", use "Progress on Assigned Tasks and Timely Communication"
             - Instead of "Lack of Proactiveness in Handling Cypress Maintenance and Regression Delays", use "Proactiveness in Addressing Issues"
         * Focus on the underlying skill or behavior that needs improvement rather than the specific context where it occurred
-        - For the "Current performance" section, write a concise 1-2 sentence summary of the performance gap that focuses on the core issue
-        - For the "Example" section (singular, not plural):
+        - For the "Current performance:" section, write a concise 1-2 sentence summary of the performance gap that focuses on the core issue
+        - For the "Examples:" section (singular, not plural):
         * Combine information from both the "Provide specific examples" and "Detail how these concerns have been raised" sections into a cohesive narrative
         * Use passive voice throughout (e.g., "concerns were raised" instead of "I raised concerns")
         * Avoid redundancy between the current performance description and examples
         * Structure the example as a chronological narrative that tells the complete story
         * Include specific dates and details from both sections
+        - For the "Expected performance" section:
+        * Start with "As a [employee job title] for the [employee team/sub-team] team, you were expected to …"
+        * Note that there is NO colon after "Expected performance" in the template
+        * Ensure this section clearly states what was expected of the employee
         - Do NOT add any information to the example that is not explicitly mentioned in the conversation history
         - Categorize the gap by type (skill deficiency, behavioral issue, output quality, etc.)
         - Assess severity based ONLY on concrete impact described (critical, significant, moderate)
@@ -200,8 +204,14 @@ class ComprehensivePIPGeneratorTool(BaseTool):
         7. Do NOT enclose the document in any tags like [PIP_Document]
         8. The document should start with the date and end with the signature lines exactly as shown in the template
         9. Follow the exact spacing, line breaks, and formatting shown in the template
-        10. For each performance gap section, use the exact format shown in the template with "Current performance:", "Examples:", and "Expected performance" subsections
+        10. For each performance gap section, use the exact format shown in the template with "Current performance:", "Examples:", and "Expected performance" subsections (note: "Expected performance" has NO colon)
         11. For each improvement goal section, use the exact format shown in the template with "Goal:" and "Action Plans:" subsections
+        12. Use the EXACT section headings as shown in the template, including:
+            - "Performance Areas Requiring Improvement:"
+            - "Next steps on expected improvements:"
+        13. For the "Next steps on expected improvements:" section, list each performance gap again before its goal and action plans
+        14. Ensure the "Expected performance" section starts with "As a [employee job title] for the [employee team/sub-team] team, you were expected to …"
+        15. Do not add any additional formatting, sections, or content that is not explicitly shown in the template
 
 
         ## QUALITY STANDARDS
@@ -214,6 +224,15 @@ class ComprehensivePIPGeneratorTool(BaseTool):
         - Contains no contradictory or confusing instructions
         - Includes all information from the input without fabricating details
         - Avoids repeatedly pointing out the employee's shortcomings; each issue should be mentioned once with clarity rather than multiple times throughout the document
+        - EXACTLY matches the format provided in the OUTPUT FORMAT section
+        
+        ## FINAL FORMAT CHECK
+        Before submitting your response, perform a final check to ensure your document:
+        1. Follows the exact structure of the template
+        2. Uses the exact section headings from the template
+        3. Has the correct formatting for each section (e.g., "Current performance:" with a colon, "Expected performance" without a colon)
+        4. Includes all required sections in the correct order
+        5. Does not add any sections or content not in the template
         """
         
         # Replace placeholders in the system message

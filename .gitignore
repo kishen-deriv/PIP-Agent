@@ -215,5 +215,4 @@ ENV/
 .DS_Store
 
 # Log Folders
-output/
 sample_inputs/

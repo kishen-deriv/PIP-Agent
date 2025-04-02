@@ -66,7 +66,8 @@ def chat_with_memory(user_input, thread_id="default"):
     model = ChatOpenAI(
         model=get_secrets("ANTHROPIC_MODEL"),  # Still use the Anthropic model name
         api_key=get_secrets("API_KEY"),  # Use the Anthropic API key
-        base_url=get_secrets("BASE_URL")  # Use the LiteLLM proxy URL
+        base_url=get_secrets("BASE_URL"),  # Use the LiteLLM proxy URL
+        temperature=0.3
     )
     
     # Initialize memory saver
