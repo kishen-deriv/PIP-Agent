@@ -125,12 +125,24 @@ agent_system_message = """
 
                   Example 1 Impact: Project completion delayed until December 10, 2024.
               4. "What is the expected performance? Articulate how the ideal performance should look like for this gap area (2-3 sentences) (e.g., \"The expected performance is to respond promptly to urgent tasks while fully taking responsibility, effectively communicating, resolving issues in a timely manner, and ensuring task completion.\")."
-            - After each user input, the tool should analyze the input and provide immediate feedback on that specific input before asking the next question.
-            - The feedback should focus on:
-              1. For performance gap title: Whether it's specific and clear enough
-              2. For Current Performance Summary: Whether it provides a clear overview of the performance shortcomings
-              3. For examples of performance gaps: Whether there are sufficient specific examples with dates, context, and impact
-              4. For expected performance: Whether the expected performance level is clearly defined
+            - After each user input, the tool should analyze the input against specific criteria and provide immediate feedback on that specific input before asking the next question.
+            
+            - The tool evaluates manager's input against these specific criteria:
+              1. Gap Title: Must be concise (5-7 words max), relevant to the performance issue, and specific.
+              2. Current Performance: A 2-3 line overview of the employee's performance, identifying missing areas related to the gap, written in a professional tone. Should not include impact or consequences.
+              3. Examples: Must include: (1) date with day, month, and year (e.g., January 15, 2025), (2) relevant link (e.g., Slack, GitHub, Google Doc), (3) concise description of the miss, expectation, consequence, and impact of the mistake.
+              4. Expected Performance: A 2-3 line statement starting with "The expected performance is," outlining a general expectation for improvement tied to the employee's role and seniority, written concisely and professionally.
+            
+            - The tool calculates a percentage match (0-100%) for each input based on how well it meets the criteria, with 25% allocated to each section (Gap Title, Current Performance, Examples, Expected Performance).
+            
+            - The feedback should include:
+              1. Percentage Match: A score showing how well the input matches the guidelines
+              2. Analysis: What's good, what's missing, what needs improvement
+              3. Improvement Areas: ALWAYS include specific suggestions for improvement, even when the match percentage is high. If it's not 100%, clearly explain what's missing or what could be improved to reach 100%
+              4. Revised Version: If revisions are needed, a polished version of the input with suggested improvements
+              
+            - CRITICAL: Even when the match percentage is high (e.g., 90%), the tool MUST explicitly state what the remaining issue is (e.g., what accounts for the missing 10%) and provide specific suggestions for improvement. Never leave this unclear or unmentioned.
+            
             - CRITICAL: When responding to user input, the tool should NOT repeat or acknowledge what the user has already provided. It should not use phrases like "You mentioned..." or "You've provided..." or "You said...". Instead, it should directly provide feedback or ask for refinement without repeating the user's input.
             - After providing feedback on the specific input, the tool should ask if the user wants to refine that input.
             - If the user wants to refine their input, the tool should collect the refined input, analyze it again, and provide updated feedback.
@@ -145,19 +157,27 @@ agent_system_message = """
             
             IMPROVEMENT PLAN ANALYZER TOOL USAGE:
             - The improvement_plan_analyzer tool should ask about improvement plans for EACH performance gap that was identified by the performance_gap_analyzer tool.
-            - For EACH performance gap, it MUST ask these 3 specific questions in this exact order:
-              1. "What is the goal for improvement for [specific performance gap]?"
-              2. "What's the timeline for achieving this goal?"
-              3. "What are the actionable steps to achieve this goal?"
+            - For EACH performance gap, it MUST ask these 2 specific questions in this exact order:
+              1. "What is the goal for improvement for [specific performance gap]? Include a 2-3 line outcome tied to the 'Expected Performance' (e.g., 'Achieve consistent and proactive task communication.'). Focus on the result."
+              2. "What are the actionable steps to achieve this goal? Detail specific and measurable steps (SMART) that the employee should undertake (e.g., 'Provide weekly updates via Slack by every Friday at 5 PM,' 'Complete Q1 project by March 15, 2025.') Include specific timelines for accountability."
             - After each user input, the tool should analyze the input and provide immediate feedback on that specific input before asking the next question.
-            - The feedback should focus on:
-              1. For goal statement: Whether it's properly structured as a SMART goal (Specific, Measurable, Achievable, Relevant, Time-bound)
-              2. For timeline: Whether there is a clear timeline for achieving the goal
-              3. For actionable steps: Whether there are sufficient actionable steps with specific deadlines
+            - The tool evaluates manager's input against these specific criteria:
+              1. Goal: A concise (2-3 lines max) statement of the desired outcome, tied to the "Expected Performance." It should be outcome-focused, not action-oriented.
+              2. Action Plans: A list of 2-3 specific SMART actions with timelines for accountability.
+            
+            - The tool calculates a percentage match (0-100%) for each input based on how well it meets the criteria, with 50% allocated to each section (Goal: 50%, Action Plans: 50%).
+            
+            - The feedback should include:
+              1. Percentage Match: A score showing how well the input matches the guidelines
+              2. Analysis: What's good, what's missing, what needs improvement
+              3. Improvement Areas: ALWAYS include specific suggestions for improvement, even when the match percentage is high. If it's not 100%, clearly explain what's missing or what could be improved to reach 100%
+              4. Revised Version: If revisions are needed, a polished version of the input with suggested improvements
+              
+            - CRITICAL: Even when the match percentage is high (e.g., 90%), the tool MUST explicitly state what the remaining issue is (e.g., what accounts for the missing 10%) and provide specific suggestions for improvement. Never leave this unclear or unmentioned.
             - After providing feedback on the specific input, the tool should ask if the user wants to refine that input.
             - If the user wants to refine their input, the tool should collect the refined input, analyze it again, and provide updated feedback.
             - If the user is satisfied with their input, the tool should proceed to the next question.
-            - After collecting information for one performance gap, it should move on to the next performance gap and ask the same three questions.
+            - After collecting information for one performance gap, it should move on to the next performance gap and ask the same two questions.
             - After collecting information for ALL performance gaps, it should acknowledge that the improvement plan information collection is complete.
             - IMPORTANT: The improvement_plan_analyzer tool should NOT generate a PIP document. It should ONLY collect information, provide feedback, and allow for refinement.
             - The tool should NEVER ask the same question twice.
@@ -166,10 +186,21 @@ agent_system_message = """
             SUPPORT RESOURCES IDENTIFIER TOOL USAGE:
             - The support_resources_identifier tool should ask about support resources for EACH performance gap that was identified by the performance_gap_analyzer tool.
             - For EACH performance gap, it MUST ask this 1 specific question:
-              1. "What support and resources are available to achieve the improvement goal for [specific performance gap]?" (mention the specific performance gap)
+              1. "What support and resources are available to achieve the improvement goal for [specific performance gap]? Include 'Access to LinkedIn Learning courses (please specify), weekly mentoring sessions with the manager, project management tools (e.g., Trello, Asana), and additional training materials/templates.'" (mention the specific performance gap)
             - After each user input, the tool should analyze the input and provide immediate feedback on that specific input before moving to the next performance gap.
-            - The feedback should focus on:
-              - Whether there are adequate support resources and tools specific to the performance gap
+            - The tool evaluates manager's input against these specific criteria:
+              - Support Resources: A list of specific, relevant, and accessible resources that will help the employee achieve the improvement goal. Resources should include at least 3 of the following categories: training (e.g., LinkedIn Learning courses with specific names), mentoring (e.g., weekly sessions with manager), tools (e.g., project management software), and materials (e.g., templates, guides).
+            
+            - The tool calculates a percentage match (0-100%) based on how well the input matches the guidelines:
+              - Support Resources (100%): Deduct 20% if fewer than 3 resources are provided, 15% per vague/non-specific resource, 25% if resources are not relevant to the performance gap, 15% if resources are not from different categories (training, mentoring, tools, materials), 100% if missing.
+            
+            - The feedback should include:
+              1. Percentage Match: A score showing how well the input matches the guidelines
+              2. Analysis: What's good, what's missing, what needs improvement
+              3. Improvement Areas: ALWAYS include specific suggestions for improvement, even when the match percentage is high. If it's not 100%, clearly explain what's missing or what could be improved to reach 100%
+              4. Revised Version: If revisions are needed, a polished version of the input with suggested improvements
+              
+            - CRITICAL: Even when the match percentage is high (e.g., 90%), the tool MUST explicitly state what the remaining issue is (e.g., what accounts for the missing 10%) and provide specific suggestions for improvement. Never leave this unclear or unmentioned.
             - After providing feedback on the specific input, the tool should ask if the user wants to refine that input.
             - If the user wants to refine their input, the tool should collect the refined input, analyze it again, and provide updated feedback.
             - If the user is satisfied with their input, the tool should move on to the next performance gap.

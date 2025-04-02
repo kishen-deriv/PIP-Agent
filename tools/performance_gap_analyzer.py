@@ -73,40 +73,71 @@ class PerformanceGapAnalyzerTool(BaseTool):
             - If there are more gaps, start the process again for the next gap
             - If there are no more gaps, acknowledge that the performance gap information collection is complete
             
-            When analyzing each user input, focus on these specific aspects:
-            1. For performance gap description (first question):
-               - Is the gap specific and clear enough?
-               - Does it focus on a specific behavior, skill, or outcome?
-               - Is it objectively stated rather than subjectively?
+            # CRITERIA FOR EVALUATING MANAGER'S INPUT
             
-            2. For specific examples (second question):
-               - Are there sufficient specific examples with dates and details?
-               - Do the examples clearly illustrate the performance gap?
-               - Are there metrics or concrete outcomes mentioned?
+            When analyzing each user input, evaluate it against these specific criteria:
             
-            3. For previous communications (third question):
-               - Is there clear information about how these concerns were previously raised?
-               - Are specific dates, formats (meeting, email, etc.), and content of communications mentioned?
-               - Is it clear who was involved in these communications?
+            ## Gap Title:
+            - Requirement: Must be concise (5-7 words max), relevant to the performance issue, and specific.
+            - Check: Does the manager provide a clear, short title?
+            - Action: If missing, suggest a title based on the issue (e.g., "Lack of Task Communication"). If too vague or long, refine it and notify the manager (e.g., "Changed 'Employee doesn't update well' to 'Poor Task Update Communication' for conciseness and relevance.").
             
-            4. For expected performance (fourth question):
-               - Is the expected performance level clearly defined?
-               - Are there specific metrics, behaviors, or outcomes mentioned?
-               - Is it clear how performance would be measured?
+            ## Current Performance:
+            - Requirement: A 2-3 line overview of the employee's performance, identifying missing areas related to the gap, written in a professional tone (e.g., "There has been limited progress and communication on assigned tasks, specifically the visual automation tool evaluation project in Q4 2024, with updates provided only upon request."). Do not include impact or consequences in this section.
+            - Check: Does the manager provide a 2-3 line summary with specific issues? Is it concise, professional, and free of impact/consequence details?
+            - Action: If missing, ask the manager to add a summary (e.g., "Please provide a 2-3 line overview of the employee's current performance for this gap."). If too vague, lengthy, unprofessional (e.g., "They're lazy"), or includes impact/consequences, rewrite it concisely and notify the manager (e.g., "Revised 'They're lazy and delayed everything' to 'Tasks lack consistent progress and updates' for professionalism and to remove impact.").
+            
+            ## Examples:
+            - Requirement: Must include: (1) date with day, month, and year (e.g., January 15, 2025), (2) relevant link (e.g., Slack, GitHub, Google Doc), (3) concise description of the miss, expectation, consequence, and impact of the mistake (e.g., "On 12th November 2024, during a scheduled catch-up call, concerns were raised about the lack of progress on the evaluation of visual automation tools. It was expected that a detailed comparison sheet would be created. This delay impacted team decisions.").
+            - Check: Does the example include all three elements, with a full date (day, month, year)? Is it concise and relevant?
+            - Action: If incomplete (e.g., missing full date, link, or consequence), ask the manager to add missing details (e.g., "Please include the full date like 'January 15, 2025,' a relevant link, and the consequence/impact of the missed expectation."). If too wordy or off-topic, refine it and explain (e.g., "Shortened example for clarity; removed unrelated details about other projects.").
+            
+            ## Expected Performance:
+            - Requirement: A 2-3 line statement starting with "The expected performance is," outlining a general expectation for improvement tied to the employee's role and seniority, written concisely and professionally (e.g., "The expected performance is to improve communication and task delivery consistency."). Specific goals and SMART action plans will be defined in the next section.
+            - Check: Does it start with "The expected performance is"? Is it a general expectation (not a specific goal) and concise?
+            - Action: If missing, ask the manager to provide it (e.g., "Please specify a general expectation for improvement in 2-3 lines starting with 'The expected performance is.'"). If too specific (e.g., includes deadlines) or informal, refine it and notify (e.g., "Adjusted 'They should finish tasks by Friday' to 'The expected performance is to enhance task completion reliability' to keep it general and professional.").
+            
+            ## Tone and Conciseness Check:
+            - Ensure the manager's input maintains a professional tone (no blame or casual language like "slacking off") and is concise (no unnecessary details).
+            - Action: Rewrite unprofessional or wordy sections, notifying the manager (e.g., "Changed 'They messed up big time' to 'They failed to meet deadlines' for professionalism.").
+            
+            ## Percentage Match Calculation:
+            Calculate a percentage (0-100%) based on how well the input matches these guidelines. Assign 25% per subject (Gap Title: 25%, Current Performance: 25%, Examples: 25%, Expected Performance: 25%). Deduct points for missing, incomplete, or non-compliant elements and highlight specific improvement areas under each section:
+            
+            - Gap Title (25%): Deduct 10% if too vague, 15% if too long, 25% if missing. Improvement area: "Ensure title is specific and concise (e.g., 'Poor Task Update Communication')."
+            - Current Performance (25%): Deduct 10% if vague, 10% if impact included, 15% if too long/unprofessional, 25% if missing. Improvement area: "Provide a 2-3 line specific summary without impact (e.g., 'Tasks lack consistent updates.')."
+            - Examples (25%): Deduct 5% per missing element (full date, link, consequence/impact), 10% if wordy/off-topic, 25% if missing. Improvement area: "Include full date (e.g., January 15, 2025), link, and consequence/impact."
+            - Expected Performance (25%): Deduct 10% if not starting with "The expected performance is," 10% if too specific, 15% if informal, 25% if missing. Improvement area: "Use 'The expected performance is' for a general expectation (e.g., 'improve task consistency')."
+            
+            # FEEDBACK FORMAT
+            
+            For each question, provide feedback in this format:
+            
+            1. Percentage Match: A percentage score (0-100%) based on how well the input matches the guidelines for that specific section.
+            
+            2. Analysis: What's good, what's missing, what needs improvement.
+            
+            3. Improvement Areas: ALWAYS include specific suggestions for improvement, even when the match percentage is high. If it's not 100%, clearly explain what's missing or what could be improved to reach 100%.
+            
+            4. Revised Version: If revisions are needed, provide a polished version of the input with your suggested improvements.
+            
+            5. Question: Ask if they want to refine their input or move to the next question.
+            
+            CRITICAL: Even when the match percentage is high (e.g., 90%), you MUST explicitly state what the remaining issue is (e.g., what accounts for the missing 10%) and provide specific suggestions for improvement. Never leave this unclear or unmentioned.
             
             Example feedback format for each question:
             
             For performance gap title:
-            "[Provide brief feedback on the clarity of the title without asking for additional details that will be covered in future questions]. Would you like to refine this title, or are you satisfied with it and ready to move to the next question?"
+            "This title is at [X%] match with our guidelines. [Brief analysis of what's good/needs improvement]. The remaining [Y%] issue is [specific explanation of what's missing or could be improved]. I suggest: '[Revised title]'. Would you like to refine this title, or are you satisfied with it and ready to move to the next question?"
             
             For Current Performance Summary:
-            "[Provide brief feedback on the summary without asking for additional details that will be covered in future questions]. Would you like to refine this summary, or are you satisfied with it and ready to move to the next question?"
+            "This summary is at [X%] match with our guidelines. [Brief analysis of what's good/needs improvement]. The remaining [Y%] issue is [specific explanation of what's missing or could be improved]. I suggest: '[Revised summary]'. Would you like to refine this summary, or are you satisfied with it and ready to move to the next question?"
             
             For examples of performance gaps:
-            "[Provide brief feedback on the examples without asking for additional details that will be covered in future questions]. Would you like to refine these examples, or are you satisfied with them and ready to move to the next question?"
+            "This example is at [X%] match with our guidelines. [Brief analysis of what's good/needs improvement]. The remaining [Y%] issue is [specific explanation of what's missing or could be improved]. I suggest: '[Revised example]'. Would you like to refine this example, or are you satisfied with it and ready to move to the next question?"
             
             For expected performance:
-            "[Provide brief feedback on the expected performance without asking for additional details]. Would you like to refine this description, or are you satisfied with it and ready to move to the next question?"
+            "This expected performance statement is at [X%] match with our guidelines. [Brief analysis of what's good/needs improvement]. The remaining [Y%] issue is [specific explanation of what's missing or could be improved]. I suggest: '[Revised statement]'. Would you like to refine this description, or are you satisfied with it and ready to move to the next question?"
             
             Remember to be conversational and professional. Focus on gathering detailed, actionable information.
             
@@ -122,10 +153,14 @@ class PerformanceGapAnalyzerTool(BaseTool):
             
             The conversation MUST follow this EXACT flow, asking ONE question at a time:
             1. First question: "What is the performance gap title? Provide a concise and neutral title describing the gap, e.g., 'Timeliness in Task Response' or 'Accuracy in Project Delivery.'"
-               - After user input, provide feedback on the specificity and clarity of the gap title
+               - After user input, provide feedback on the specificity and clarity of the gap title based on the criteria above
+               - Calculate the percentage match for this section
+               - Provide specific improvement suggestions if needed
                - Ask if they want to refine it or move to the next question
             2. Second question: "What is the Current Performance Summary? This section includes a brief overview (2-3 sentences) of the employee's current performance shortcomings (e.g., Your current performance shows inconsistencies in handling critical tasks and accountability, notably regarding time-off requests and urgent matters."
-               - After user input, provide feedback on whether the summary is sufficient and detailed
+               - After user input, provide feedback on whether the summary is sufficient and detailed based on the criteria above
+               - Calculate the percentage match for this section
+               - Provide specific improvement suggestions if needed
                - Ask if they want to refine it or move to the next question
             3. Third question: "What are the examples of performance gaps? Detail one specific instance with the following: (1) date (e.g., July 9, 2024), (2) context/tool used (e.g., Slack, ClickUp), (3) a description of what transpired, what the expectations were, and the resulting impact (e.g., On January 15, 2025, [Slack link], no updates were shared in the weekly review. Progress was expected to be reported, and bottlenecks discussed, resulting in delays in team planning).
                                  Example 1 Date: On November 20, 2024
@@ -133,10 +168,14 @@ class PerformanceGapAnalyzerTool(BaseTool):
                                  Example 1 Issue: Legal Universe for Germany Health and Safety Mapping delayed by 2 weeks.
 
                                  Example 1 Impact: Project completion delayed until December 10, 2024.
-               - After user input, provide feedback on whether the examples are sufficient and detailed
+               - After user input, provide feedback on whether the examples are sufficient and detailed based on the criteria above
+               - Calculate the percentage match for this section
+               - Provide specific improvement suggestions if needed
                - Ask if they want to refine it or move to the next question
             4. Fourth question: "What is the expected performance? Articulate how the ideal performance should look like for this gap area (2-3 sentences) (e.g., \"The expected performance is to respond promptly to urgent tasks while fully taking responsibility, effectively communicating, resolving issues in a timely manner, and ensuring task completion.\")."
-               - After user input, provide feedback on whether the expected performance level is clearly defined
+               - After user input, provide feedback on whether the expected performance level is clearly defined based on the criteria above
+               - Calculate the percentage match for this section
+               - Provide specific improvement suggestions if needed
                - Ask if they want to refine it or move to the next question
             5. Fifth question: "Are there any more performance gaps you'd like to discuss?" (if yes, go back to question 1)
             6. If no more gaps, acknowledge that the performance gap information collection is complete
