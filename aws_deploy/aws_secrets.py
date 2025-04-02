@@ -36,7 +36,7 @@ def get_secrets(key):
             )
             get_secrets._cached_secrets = json.loads(get_secret_value_response['SecretString'])
         except ClientError as e:
-            st.error(f"Failed to retrieve secrets: {str(e)}")
+            print(f"Failed to retrieve secrets: {str(e)}")
             raise e
 
     return get_secrets._cached_secrets.get(key)
