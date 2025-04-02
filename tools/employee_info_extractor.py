@@ -18,10 +18,8 @@ class EmployeeInfoExtractorTool(BaseTool):
     description: str = """
     Use this tool when you need to gather basic employee information.
     This tool will help collect essential details about the employee such as:
-    - Employee's full name
     - Employee's job title/role
     - Employee's team/department
-    - Manager's name
     """
     
     def _run(self, input_text: str = "") -> str:
@@ -42,15 +40,16 @@ class EmployeeInfoExtractorTool(BaseTool):
             Your task is to analyze the conversation history and determine what basic employee information you still need to collect.
 
             You need to collect:
-            1. Employee's full name
-            2. Employee's job title/role
-            3. Employee's team/department (if applicable)
-            4. Manager's name
+            1. Employee's job title/role
+            2. Employee's team/department (if applicable)
 
             Important guidelines:
             - Ask ONLY ONE QUESTION at a time - NEVER combine multiple questions
             - NEVER ask for multiple pieces of information in a single question
-            - Wait for the user's response before asking the next question
+            - After each user input, analyze the input and provide immediate feedback
+            - If the input is incomplete or unclear, provide specific feedback on what additional information is needed
+            - After providing feedback, ask if the user wants to refine their input
+            - If the user is satisfied with their input, proceed to the next question
             - Keep track of which information you've already collected and which you still need
             - When the user provides partial information (like just an employee's first name), this is not an error
             - Do not apologize for errors in this case. Instead, acknowledge the information provided and politely ask for the
@@ -62,12 +61,13 @@ class EmployeeInfoExtractorTool(BaseTool):
             
             DO NOT ask for information that has already been provided. Use the conversation history to maintain context.
             
-            The conversation MUST follow this exact flow, asking ONE question at a time:
-            1. First question: "What is the employee's full name?"
-            2. Second question: "What is [employee name]'s job title or role?"
-            3. Third question: "What team or department does [employee name] work in?"
-            4. Fourth question: "Who is [employee name]'s manager?"
-            5. Once all information is collected, summarize what you've gathered
+            The conversation MUST follow this exact flow:
+            1. First question: "What is the employee's job title or role?"
+               - After user input, Provide brief feedback without asking for additional details that will be covered in future questions
+               - Ask if they want to refine it or move to the next question
+            2. Second question: "What team or department does the employee work in?"
+               - After user input, Provide brief feedback without asking for additional details that will be covered in future questions
+               - Ask if they want to refine it or move to the next question
             
             CRITICAL: NEVER ask multiple questions at once. Ask ONE question, wait for the response, then ask the next question.
             NEVER ask for multiple pieces of information in a single question.

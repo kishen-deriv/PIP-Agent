@@ -1574,5 +1574,829 @@
         "content": "I've generated a Performance Improvement Plan document based on the information you provided. However, I notice there are some inconsistencies in the document that need to be addressed:\n\nThe PIP document contains performance areas that weren't discussed in our conversation (such as \"Progress on Assigned Tasks and Timely Communication\" and \"Proactiveness in Addressing Issues\"). It also includes specific dates and names that weren't mentioned in our discussion.\n\nLet me create a corrected PIP document that accurately reflects the information you provided:\n\n[Date]\n\n[Employee Name]\n[Address Line 1]\n[Address Line 2]\n[Address Line 3]\n\nDear [employee name],\n\nRe: AI Engineer, Performance Improvement Plan \n\nWe are writing to you regarding your performance as an AI Engineer and to outline a Performance Improvement Plan (PIP) designed to address specific areas of concern. The purpose of this plan is to provide you with clear guidance and support to help you succeed in your role.\n\nWe have identified the following key area where your performance has fallen short of expectations:\n\nPerformance Areas Requiring Improvement:\n\n1. Ownership and motivation to build the complete solution for MT5-event-streaming plugin\n\nCurrent performance:\nLack of ownership does not allow us to approach our target of building a resilient mt5-event-streaming-plugin. We need to visualize a clear technical approach, provide reasonable estimations, and implement the solution up to production usage.\n\nExamples:\nIn November 2024, you started working on the module for resilient event streaming from MT5. That required confirming the problem and building the solution as well as the track how to approach it. You have been asked to build a solution diagram, define the scope, and maintain cards correctly, so that they reflect the statement of work.\n\nExpected performance:\nThe expected performance is to take ownership of the technically challenging work in the team, be able to critically analyze problems and approaches, perform investigations, and implement solutions.\n\nNext steps on expected improvements:\n\nOwnership and motivation to build the complete solution for MT5-event-streaming plugin\n\nGoal: Create a complete solution for capturing events from MT5 servers and confirm they are accurately persisted and read for subsequent processing. It shall be confirmed by the DevOps team, arranged for gradual deployment into production, and tested for stability and performance. All necessary steps are to be documented as Miro diagrams, and ClickUp cards for estimating and iterating.\n\nAction Plans:\n1. Work with stakeholders (Seva, Daniel) on the architectural design, build diagrams, define scope as Clickup cards, and provide estimations.\n2. Take ownership of the deployment of the MT5-event-streaming-plugin, arrange the process with the WinOps/DevOps team (Basel, Andreas), provide the rollout strategy, and execute it.\n\nTo support your improvement efforts, we will provide:\n- Support from colleagues, like Seva and Basel\n- Necessary guidance and resources for achieving the goals\n- Weekly feedback from the manager and requested technical staff\n\nWe will monitor your performance for the next 2 months and conduct reviews to assess your progress and provide feedback.\n\nIt is crucial that you demonstrate consistent improvement and meet the outlined objectives by the end of the PIP period. Should you fail to improve your work performance to an acceptable level, the company may, at its sole discretion, have no option but to terminate your employment contract.\n\nWe are confident in your ability to make the necessary improvements and are committed to supporting your success. Please do not hesitate to reach out if you need any clarification or additional support during this process.\n\nSincerely,\n\n\n[MANAGER NAME]\nManager\n_______________________________________________________________________\n\nI, [Employee Name], I.D./I.C./Passport No.: [identification number] hereby confirm receipt of a copy of this Performance Improvement Plan and agree to comply with its contents.\n\n\n_______________ \nDate:"
       }
     ]
+  },
+  "slack-D08JACQTKFB-1743577820.931379": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, and I can help you create a Performance Improvement Plan document. Let me know when you're ready to start the process, and I'll guide you through it step by step."
+      },
+      {
+        "role": "human",
+        "content": "need to create PIP"
+      },
+      {
+        "role": "ai",
+        "content": "What is the employee's full name?"
+      },
+      {
+        "role": "human",
+        "content": "kishen"
+      },
+      {
+        "role": "ai",
+        "content": "What is Kishen's last name?"
+      },
+      {
+        "role": "human",
+        "content": "no last name"
+      },
+      {
+        "role": "ai",
+        "content": "I understand that only the first name \"Kishen\" is available. What is the employee's job title or role?"
+      },
+      {
+        "role": "human",
+        "content": "ai engineer"
+      },
+      {
+        "role": "ai",
+        "content": "What team or department does the employee work in?"
+      },
+      {
+        "role": "human",
+        "content": "ai"
+      },
+      {
+        "role": "ai",
+        "content": "Who is the employee's manager?"
+      },
+      {
+        "role": "human",
+        "content": "sarah"
+      },
+      {
+        "role": "ai",
+        "content": "What is the specific performance gap you've identified?"
+      },
+      {
+        "role": "human",
+        "content": "Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation"
+      },
+      {
+        "role": "ai",
+        "content": "The performance gap you've identified is \"Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation.\" This gives me a general understanding, but I'd like to get more specific details about this gap.\n\nCould you provide more information about what specifically is lacking in the employee's performance regarding the Visual Automation Tool evaluation? For example, what tasks or responsibilities were not completed, what deadlines were missed, or what specific actions were expected but not taken?"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743578895.638469": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, and I can help you create a Performance Improvement Plan document. Let me know when you're ready to start the process, and I'll guide you through it step by step."
+      },
+      {
+        "role": "human",
+        "content": "need to create PIP"
+      },
+      {
+        "role": "ai",
+        "content": "What is the employee's full name?"
+      },
+      {
+        "role": "human",
+        "content": "marvin"
+      },
+      {
+        "role": "ai",
+        "content": "What is Marvin's job title or role?"
+      },
+      {
+        "role": "human",
+        "content": "ai engineer"
+      },
+      {
+        "role": "ai",
+        "content": "What team or department does the employee work in?"
+      },
+      {
+        "role": "human",
+        "content": "ai department"
+      },
+      {
+        "role": "ai",
+        "content": "What is the manager's name?"
+      },
+      {
+        "role": "human",
+        "content": "sarah"
+      },
+      {
+        "role": "ai",
+        "content": "What is the specific performance gap you've identified?"
+      },
+      {
+        "role": "human",
+        "content": "Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation"
+      },
+      {
+        "role": "ai",
+        "content": "Thank you for providing that information. Could you provide specific examples of how this gap reflects in the employee's work performance?"
+      },
+      {
+        "role": "human",
+        "content": "\"Throughout Q4, there were no regular progress updates provided until specifically requested. This lack of initiative in communicating progress made it difficult to assess the status of the project and delayed decision-making.\""
+      },
+      {
+        "role": "ai",
+        "content": "This example provides good context about the communication issues. It clearly shows how the lack of proactive updates affected project assessment and decision-making. \n\nHow have these concerns been raised with the employee previously?"
+      },
+      {
+        "role": "human",
+        "content": "\"\"\"On November 12, 2024, during our catch-up call, I raised concerns about the lack of progress on the visual automation tool evaluation. I instructed you to create a clear comparison sheet documenting the tools tested, including a list of must-have features. I provided an example of a comparison sheet for reference. During the call, I also emphasized the need for consistent progress updates and instructed you to provide status updates every Thursday or, at the latest, by Friday.\n\nOn November 15, 2024, the comparison sheet was still not completed. I sent a reminder via Slack, reiterating to provide consistent updates on the evaluation progress by the end of each Thursday. You acknowledged this and agreed to give consistent updates on the evaluation progress.\"\"\""
+      },
+      {
+        "role": "ai",
+        "content": "This information is very detailed and provides excellent context. You've included specific dates (November 12 and November 15, 2024), the communication channels used (catch-up call and Slack), and clear expectations that were set (comparison sheet creation, Thursday/Friday updates). You've also noted that the employee acknowledged these expectations.\n\nWhat is the expected level of performance regarding this gap?"
+      },
+      {
+        "role": "human",
+        "content": "The expected performance is to evaluate and finalize the visual automation tool by the end of Q4. During the evaluation, you are expected to proactively communicate with vendors and team members to ensure milestones are met. As a team lead, you must address technical challenges and provide regular, concise, and accurate progress updates. By the end of Q4, you should have completed the evaluation and selected a visual automation tool based on the outcome."
+      },
+      {
+        "role": "ai",
+        "content": "I see that we've already collected information about this performance gap. Your description of the expected performance is clear and comprehensive. It outlines:\n\n1. The specific deliverable (evaluate and finalize the visual automation tool by end of Q4)\n2. Communication expectations (proactive communication with vendors and team members)\n3. Leadership responsibilities (addressing technical challenges as a team lead)\n4. Reporting requirements (regular, concise, and accurate progress updates)\n5. End goal (completed evaluation with tool selection)\n\nAre there any additional performance gaps you'd like to address in this PIP?"
+      },
+      {
+        "role": "human",
+        "content": "yes"
+      },
+      {
+        "role": "ai",
+        "content": "What is the specific performance gap you've identified?"
+      },
+      {
+        "role": "human",
+        "content": "Lack of Engagement in Squad-Related Production Issue Discussions"
+      },
+      {
+        "role": "ai",
+        "content": "Could you provide specific examples of how this gap reflects in the employee's work performance?"
+      },
+      {
+        "role": "human",
+        "content": "On November 11, 2024, during the incident #incident_twillio-tajikistan-issue-11-nov-2024, you did not participate in the incident channel, despite being part of the Squad User Profile Management. This lack of involvement led to other team members having to step in and assist, delaying the resolution process."
+      },
+      {
+        "role": "ai",
+        "content": "This example provides a specific incident with a date (November 11, 2024) and reference number (#incident_twillio-tajikistan-issue-11-nov-2024), which is helpful. It clearly shows how the employee's lack of participation affected the team and resolution process.\n\nHow have these concerns been raised with the employee previously?"
+      },
+      {
+        "role": "human",
+        "content": "During our call about team structure changes, I reiterated the expectations regarding squad responsibilities, including handling production issues and incidents related to the squad, monitoring the squad's backlog, task assignments, and addressing resource issues. You acknowledged and agreed to these responsibilities during the call."
+      },
+      {
+        "role": "ai",
+        "content": "This information provides context about how the expectations were communicated, though it would be more helpful with specific dates and more details about the employee's response. \n\nWould you like to add any more specific details about when these concerns were raised, such as the date of the call about team structure changes, or any follow-up communications?"
+      },
+      {
+        "role": "human",
+        "content": "nope"
+      },
+      {
+        "role": "ai",
+        "content": "I understand. Let's proceed with the information provided.\n\nWhat is the expected level of performance regarding this gap?"
+      },
+      {
+        "role": "human",
+        "content": "The expected performance is to actively participate in all squad discussions related to production issues and contribute effectively to QA problem resolution during incidents. You are expected to take ownership of QA tasks, ensuring that production fixes are investigated, scenarios are prioritized for automation where possible, and issues are resolved with the highest urgency to meet release deadlines."
+      },
+      {
+        "role": "ai",
+        "content": "Thank you for providing the expected performance level. This clearly outlines the expectations for:\n\n1. Active participation in squad discussions related to production issues\n2. Effective contribution to QA problem resolution during incidents\n3. Ownership of QA tasks\n4. Investigation of production fixes\n5. Prioritization of automation scenarios\n6. Resolving issues with high urgency to meet deadlines\n\nAre there any additional performance gaps you'd like to address in this PIP?"
+      },
+      {
+        "role": "human",
+        "content": "nope"
+      },
+      {
+        "role": "ai",
+        "content": "What is the goal for improvement for the \"Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation\" performance gap?"
+      },
+      {
+        "role": "human",
+        "content": "\"Finalize the vendor evaluation and share the decision by 17 Jan 2025.\nAchieve 100% of visual automation in Trader's Hub smoke test by 28 Feb 2025\""
+      },
+      {
+        "role": "ai",
+        "content": "Your goal statement includes specific deliverables with clear deadlines, which is excellent. It's measurable (100% visual automation in Trader's Hub smoke test) and time-bound (specific dates in January and February 2025).\n\nTo make this even more aligned with SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound), you might consider adding:\n- Any specific criteria for the vendor evaluation decision\n- How the 100% automation will be measured or verified\n\nWould you like to refine this goal statement, or are you satisfied with it as is?"
+      },
+      {
+        "role": "human",
+        "content": "satisfied"
+      },
+      {
+        "role": "ai",
+        "content": "What's the timeline for achieving this goal?"
+      },
+      {
+        "role": "human",
+        "content": "Within 3 months"
+      },
+      {
+        "role": "ai",
+        "content": "The timeline of \"Within 3 months\" aligns with your specific deadlines mentioned in the goal (January 17, 2025 for vendor evaluation and February 28, 2025 for 100% visual automation).\n\nTo make this timeline even more effective, you might consider breaking it down into intermediate milestones or checkpoints to track progress along the way, rather than just having the final deadlines.\n\nWould you like to refine this timeline with any intermediate milestones, or are you satisfied with it as is?"
+      },
+      {
+        "role": "human",
+        "content": "satisfied"
+      },
+      {
+        "role": "ai",
+        "content": "What are the actionable steps to achieve this goal?"
+      },
+      {
+        "role": "human",
+        "content": "\"- Set reminder and provide weekly updates on research and migration progress in #project_automated_testing starting immediately after vendor finalization.\n- Create a dashboard to track the weekly migration progress with the new tool.\n- Review PRs on new tool migration and provide constructive feedback aligned with documented best practices.\n- Document best practices and create a guideline for using the new tool by 24 Jan 2025.\n- Develop and share a migration plan from Cypress Percy to the new low-code tool by 31 Jan 2025.\n- Begin weekly Zoom knowledge-sharing sessions on the new tool for all QA team members starting after vendor finalization, ensuring at least five recorded sessions by end of March 2025.\n- Address and resolve team members\u2019 questions about the new tool in the #need_help_&lt;new_tool_name&gt; channel starting two weeks after tool finalization.\n- Submit the 2x2 QA monthly report for January 2025 detailing progress, challenges, and mitigating actions.\n\""
+      },
+      {
+        "role": "ai",
+        "content": "These actionable steps are excellent and very well-defined. They include:\n\n1. Clear deadlines for specific deliverables (documentation by Jan 24, migration plan by Jan 31)\n2. Specific communication channels (#project_automated_testing, #need_help_<new_tool_name>)\n3. Concrete deliverables (dashboard, guidelines, migration plan, knowledge-sharing sessions)\n4. Ongoing responsibilities (weekly updates, PR reviews, addressing questions)\n5. Reporting requirements (2x2 QA monthly report)\n\nThe steps are comprehensive, specific, and time-bound, which will make progress tracking straightforward.\n\nAre you satisfied with these actionable steps, or would you like to refine them further?"
+      },
+      {
+        "role": "human",
+        "content": "satisfied"
+      },
+      {
+        "role": "ai",
+        "content": "What is the goal for improvement for the \"Lack of Engagement in Squad-Related Production Issue Discussions\" performance gap?"
+      },
+      {
+        "role": "human",
+        "content": "The goal for improvement is to take full ownership of QA P2P-related tasks during production incidents, providing progress updates within 24 hours of each incident. Additionally, submit a detailed monthly report that reviews squad production issues and highlights your contributions to QA resolutions. You are also expected to manage all squad P2P-related manual and automation tasks, ensuring no task remains unattended for more than 2 days. These goals should be achieved within the next 90 days."
+      },
+      {
+        "role": "ai",
+        "content": "Your goal statement includes specific expectations with measurable elements, which is good. It includes:\n\n1. Taking ownership of QA P2P-related tasks during production incidents\n2. Providing progress updates within 24 hours of each incident\n3. Submitting detailed monthly reports on squad production issues\n4. Managing squad P2P-related manual and automation tasks\n5. Ensuring no task remains unattended for more than 2 days\n6. A timeframe of 90 days\n\nTo make this even more aligned with SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound), you might consider:\n- Adding specific metrics for measuring \"full ownership\" \n- Clarifying what constitutes a \"detailed\" monthly report\n- Specifying how task management will be tracked and measured\n\nWould you like to refine this goal statement, or are you satisfied with it as is?"
+      },
+      {
+        "role": "human",
+        "content": "satisfied"
+      },
+      {
+        "role": "ai",
+        "content": "What's the timeline for achieving this goal?"
+      },
+      {
+        "role": "human",
+        "content": "Within 3 months"
+      },
+      {
+        "role": "ai",
+        "content": "The timeline of \"Within 3 months\" aligns with the 90-day period mentioned in your goal statement, which provides a clear end date for measuring improvement.\n\nTo make this timeline even more effective, you might consider:\n- Setting intermediate checkpoints (e.g., at 30 days and 60 days) to assess progress\n- Specifying when the first monthly report is expected\n- Clarifying when the 24-hour response time requirement begins\n\nWould you like to refine this timeline with any of these additional details, or are you satisfied with it as is?"
+      },
+      {
+        "role": "human",
+        "content": "satisfied"
+      },
+      {
+        "role": "ai",
+        "content": "What are the actionable steps to achieve this goal?"
+      },
+      {
+        "role": "human",
+        "content": "\"- Follow up on the bug mentioned in this Slack thread (<https://deriv-group.slack.com/archives/C0124FT6URM/p1735289297468999>) and ensure it is resolved by January 10th.\n- Set a timer to monitor updates in the \"\"\"\"Announce\"\"\"\" bug and the P2P channel.\n- Create a monthly production issue report.\""
+      },
+      {
+        "role": "ai",
+        "content": "These actionable steps provide a starting point, but they could benefit from more specificity and comprehensiveness to fully address the performance gap. \n\nTo strengthen these steps, you might consider:\n\n1. Adding more specific actions related to incident response (e.g., creating a checklist for responding to incidents)\n2. Specifying how the employee will demonstrate \"taking full ownership\" of QA P2P-related tasks\n3. Adding details about how the monthly production issue report will be structured and what it will include\n4. Including steps for managing squad P2P-related manual and automation tasks\n5. Adding specific actions for ensuring no task remains unattended for more than 2 days\n\nWould you like to refine these actionable steps to make them more comprehensive, or are you satisfied with them as is?"
+      },
+      {
+        "role": "human",
+        "content": "nope"
+      },
+      {
+        "role": "ai",
+        "content": "What support and resources are available to achieve the improvement goal for \"Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation\"?"
+      },
+      {
+        "role": "human",
+        "content": "\"- Biweekly mentorship and check-ins with Umithra and Mee Yun to review Indulekha's initial progress, provide constructive feedback, and offer guidance for improvement.\n- Consult with Mark O'Donnell for advice on technical problems and recommendations for appropriate approaches.\""
+      },
+      {
+        "role": "ai",
+        "content": "The support resources you've provided include:\n\n1. Biweekly mentorship and check-ins with specific individuals (Umithra and Mee Yun)\n2. Technical consultation with Mark O'Donnell\n\nThese are good starting points, but to ensure comprehensive support for this performance gap, you might consider adding:\n\n- Access to any specific tools, software, or platforms needed for the visual automation tool evaluation\n- Documentation, training materials, or courses related to visual automation testing\n- Budget allocation for vendor demos or trials if applicable\n- Time allocation for research and evaluation activities\n- Team resources who might assist with the evaluation process\n\nWould you like to refine these support resources, or are you satisfied with them as is?"
+      },
+      {
+        "role": "human",
+        "content": "satisfied"
+      },
+      {
+        "role": "ai",
+        "content": "What support and resources are available to achieve the improvement goal for \"Lack of Engagement in Squad-Related Production Issue Discussions\"?"
+      },
+      {
+        "role": "human",
+        "content": "\"- Biweekly feedback seesions from Mee Yun to review Indulekha's initial progress, provide constructive feedback, and offer guidance for improvement.\n- Job shadowing with Reshma on production issue handling in #announce_bugs_usability_issues channel \""
+      },
+      {
+        "role": "ai",
+        "content": "The support resources you've provided include:\n\n1. Biweekly feedback sessions with Mee Yun for progress review and guidance\n2. Job shadowing with Reshma specifically focused on production issue handling in the #announce_bugs_usability_issues channel\n\nThese are good resources that provide both feedback and practical learning opportunities. To ensure comprehensive support for this performance gap, you might consider adding:\n\n- Access to any specific tools or systems needed for monitoring and responding to production issues\n- Documentation on incident response protocols or best practices\n- Team communication channels or meetings where the employee can actively participate\n- Any training resources on incident management or squad collaboration\n- Clear escalation paths for when the employee needs additional support\n\nWould you like to refine these support resources, or are you satisfied with them as is?"
+      },
+      {
+        "role": "human",
+        "content": "satisfied"
+      },
+      {
+        "role": "ai",
+        "content": "I've prepared the Performance Improvement Plan document based on all the information collected. Here is the final PIP document:\n\n[Date]\n\n[Employee Name]\n[Address Line 1]\n[Address Line 2]\n[Address Line 3]\n\nDear [employee name],\n\nRe: AI Engineer, Performance Improvement Plan \n\nWe are writing to you regarding your performance as a AI Engineer and to outline a Performance Improvement Plan (PIP) designed to address specific areas of concern. The purpose of this plan is to provide you with clear guidance and support to help you succeed in your role.\n\nWe have identified several key areas where your performance has fallen short of expectations:\n\nPerformance Areas Requiring Improvement:\n\n1. Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation\n\nCurrent performance:\nThroughout Q4, there were no regular progress updates provided until specifically requested. This lack of initiative in communicating progress made it difficult to assess the status of the project and delayed decision-making.\n\nExamples:\nOn November 12, 2024, during our catch-up call, I raised concerns about the lack of progress on the visual automation tool evaluation. I instructed you to create a clear comparison sheet documenting the tools tested, including a list of must-have features. I provided an example of a comparison sheet for reference. During the call, I also emphasized the need for consistent progress updates and instructed you to provide status updates every Thursday or, at the latest, by Friday.\n\nOn November 15, 2024, the comparison sheet was still not completed. I sent a reminder via Slack, reiterating to provide consistent updates on the evaluation progress by the end of each Thursday. You acknowledged this and agreed to give consistent updates on the evaluation progress.\n\nExpected performance:\nThe expected performance is to evaluate and finalize the visual automation tool by the end of Q4. During the evaluation, you are expected to proactively communicate with vendors and team members to ensure milestones are met. As a team lead, you must address technical challenges and provide regular, concise, and accurate progress updates. By the end of Q4, you should have completed the evaluation and selected a visual automation tool based on the outcome.\n\n2. Lack of Engagement in Squad-Related Production Issue Discussions\n\nCurrent performance:\nOn November 11, 2024, during the incident #incident_twillio-tajikistan-issue-11-nov-2024, you did not participate in the incident channel, despite being part of the Squad User Profile Management. This lack of involvement led to other team members having to step in and assist, delaying the resolution process.\n\nExamples:\nOn November 11, 2024, during the incident #incident_twillio-tajikistan-issue-11-nov-2024, you did not participate in the incident channel, despite being part of the Squad User Profile Management. This lack of involvement led to other team members having to step in and assist, delaying the resolution process.\n\nExpected performance:\nThe expected performance is to actively participate in all squad discussions related to production issues and contribute effectively to QA problem resolution during incidents. You are expected to take ownership of QA tasks, ensuring that production fixes are investigated, scenarios are prioritized for automation where possible, and issues are resolved with the highest urgency to meet release deadlines.\n\nNext steps on expected improvements:\n\n1. Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation\n\nGoal: Finalize the vendor evaluation and share the decision by 17 Jan 2025.\nAchieve 100% of visual automation in Trader's Hub smoke test by 28 Feb 2025\n\nAction Plans:\n1. Set reminder and provide weekly updates on research and migration progress in #project_automated_testing starting immediately after vendor finalization.\n2. Create a dashboard to track the weekly migration progress with the new tool.\n3. Review PRs on new tool migration and provide constructive feedback aligned with documented best practices.\n4. Document best practices and create a guideline for using the new tool by 24 Jan 2025.\n5. Develop and share a migration plan from Cypress Percy to the new low-code tool by 31 Jan 2025.\n6. Begin weekly Zoom knowledge-sharing sessions on the new tool for all QA team members starting after vendor finalization, ensuring at least five recorded sessions by end of March 2025.\n7. Address and resolve team members' questions about the new tool in the #need_help_<new_tool_name> channel starting two weeks after tool finalization.\n8. Submit the 2x2 QA monthly report for January 2025 detailing progress, challenges, and mitigating actions.\n\n2. Lack of Engagement in Squad-Related Production Issue Discussions\n\nGoal: The goal for improvement is to take full ownership of QA P2P-related tasks during production incidents, providing progress updates within 24 hours of each incident. Additionally, submit a detailed monthly report that reviews squad production issues and highlights your contributions to QA resolutions. You are also expected to manage all squad P2P-related manual and automation tasks, ensuring no task remains unattended for more than 2 days. These goals should be achieved within the next 90 days.\n\nAction Plans:\n1. Follow up on the bug mentioned in this Slack thread (<https://deriv-group.slack.com/archives/C0124FT6URM/p1735289297468999>) and ensure it is resolved by January 10th.\n2. Set a timer to monitor updates in the \"Announce\" bug and the P2P channel.\n3. Create a monthly production issue report.\n\nTo support your improvement efforts, we will provide:\n\nFor Visual Automation Tool Evaluation:\n- Biweekly mentorship and check-ins with Umithra and Mee Yun to review your initial progress, provide constructive feedback, and offer guidance for improvement.\n- Consult with Mark O'Donnell for advice on technical problems and recommendations for appropriate approaches.\n\nFor Squad-Related Production Issue Discussions:\n- Biweekly feedback sessions from Mee Yun to review your initial progress, provide constructive feedback, and offer guidance for improvement.\n- Job shadowing with Reshma on production issue handling in #announce_bugs_usability_issues channel\n\nWe will monitor your performance for the next 3 months and conduct regular reviews to assess your progress and provide feedback.\n\nIt is crucial that you demonstrate consistent improvement and meet the outlined objectives by the end of the PIP period. Should you fail to improve your work performance to an acceptable level, the company may, at its sole discretion, have no option but to terminate your employment contract.\n\nWe are confident in your ability to make the necessary improvements and are committed to supporting your success. Please do not hesitate to reach out if you need any clarification or additional support during this process.\n\nSincerely,\n\n[MANAGER NAME]\nManager\n_______________________________________________________________________\n\nI, [Employee Name], I.D./I.C./Passport No.: [identification number] hereby confirm receipt of a copy of this Performance Improvement Plan and agree to comply with its contents.\n\n_______________ \nDate:"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743584350.898159": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, and I can help you create a Performance Improvement Plan document. Just let me know when you're ready to start the process, and I'll guide you through it step by step."
+      },
+      {
+        "role": "human",
+        "content": "generate PIP"
+      },
+      {
+        "role": "ai",
+        "content": "What is the employee's job title or role?"
+      },
+      {
+        "role": "human",
+        "content": "AI engineer"
+      },
+      {
+        "role": "ai",
+        "content": "Thank you for providing the job title. What team or department does the employee work in?"
+      },
+      {
+        "role": "human",
+        "content": "AI"
+      },
+      {
+        "role": "ai",
+        "content": "What is the manager's name for this employee?"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743584794.477729": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, an HR assistant who can help you create Performance Improvement Plan documents. Let me know if you'd like assistance with developing a PIP document for an employee."
+      },
+      {
+        "role": "human",
+        "content": "generate PIP"
+      },
+      {
+        "role": "ai",
+        "content": "What is the employee's job title or role?"
+      },
+      {
+        "role": "human",
+        "content": "ai engineer"
+      },
+      {
+        "role": "ai",
+        "content": "What team or department does this employee work in?"
+      },
+      {
+        "role": "human",
+        "content": "ai"
+      },
+      {
+        "role": "ai",
+        "content": "What is the specific performance gap you've identified for this AI Engineer?"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743585372.350459": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, an HR assistant who can help you create Performance Improvement Plan documents. Let me know if you'd like assistance with developing a PIP document for an employee."
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743585472.383899": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, an HR assistant who can help you create Performance Improvement Plan documents. Let me know if you'd like assistance with developing a PIP document for an employee."
+      },
+      {
+        "role": "human",
+        "content": "generate PIP"
+      },
+      {
+        "role": "ai",
+        "content": "What is the employee's job title or role?"
+      },
+      {
+        "role": "human",
+        "content": "ai engineer"
+      },
+      {
+        "role": "ai",
+        "content": "What team or department does this employee work in?"
+      },
+      {
+        "role": "human",
+        "content": "ai"
+      },
+      {
+        "role": "ai",
+        "content": "What is the specific performance gap you've identified for this AI Engineer?"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743585576.946439": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "I'm here to help with the Performance Improvement Plan (PIP) document creation. How can I assist you today?"
+      },
+      {
+        "role": "human",
+        "content": "generate pip"
+      },
+      {
+        "role": "ai",
+        "content": "To create a Performance Improvement Plan (PIP), I'll need some information about the employee. \n\nWhat is the employee's job title or role?"
+      },
+      {
+        "role": "human",
+        "content": "ai engineer"
+      },
+      {
+        "role": "ai",
+        "content": "What is the employee's team or department?"
+      },
+      {
+        "role": "human",
+        "content": "ai"
+      },
+      {
+        "role": "ai",
+        "content": "You've provided the employee's job title as \"AI Engineer\" and the team as \"AI.\" \n\nNow, let's discuss the performance gaps. What is the specific performance gap you've identified?"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743585753.295349": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, and I can help you create a Performance Improvement Plan document. Let me know when you'd like to begin."
+      },
+      {
+        "role": "human",
+        "content": "generate PIP"
+      },
+      {
+        "role": "ai",
+        "content": "I'm processing your request. Could you provide more details?"
+      },
+      {
+        "role": "human",
+        "content": "generate PIP"
+      },
+      {
+        "role": "ai",
+        "content": "I'm processing your request. Could you provide more details?"
+      },
+      {
+        "role": "human",
+        "content": "generate PIP"
+      },
+      {
+        "role": "ai",
+        "content": "I'm processing your request. Could you provide more details?"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743585945.559199": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, and I can help you create a Performance Improvement Plan document. Let me know when you'd like to begin."
+      },
+      {
+        "role": "human",
+        "content": "generate pip"
+      },
+      {
+        "role": "ai",
+        "content": "I'm processing your request. Could you provide more details?"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743586068.292769": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, and I can help you create a Performance Improvement Plan document. Let me know when you'd like to begin."
+      },
+      {
+        "role": "human",
+        "content": "generate PIP"
+      },
+      {
+        "role": "ai",
+        "content": "I'm processing your request. Could you provide more details?"
+      },
+      {
+        "role": "human",
+        "content": "generate PIP"
+      },
+      {
+        "role": "ai",
+        "content": "I'm processing your request. Could you provide more details?"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743586143.586759": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, an HR assistant who can help you create Performance Improvement Plan documents. Let me know if you'd like assistance with developing a PIP document for an employee."
+      },
+      {
+        "role": "human",
+        "content": "generate pip"
+      },
+      {
+        "role": "ai",
+        "content": "What is the employee's job title or role?"
+      },
+      {
+        "role": "human",
+        "content": "ai engineer"
+      },
+      {
+        "role": "ai",
+        "content": "Thank you for providing the job title. What team or department does the employee work in?"
+      },
+      {
+        "role": "human",
+        "content": "ai"
+      },
+      {
+        "role": "ai",
+        "content": "Now I'll help you identify the performance gaps for this employee. \n\nWhat is the specific performance gap you've identified?"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743589094.090399": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, and I can help you create Performance Improvement Plan (PIP) documents. When you're ready to start working on a PIP, just let me know and I'll guide you through the process."
+      },
+      {
+        "role": "human",
+        "content": "generate PIP"
+      },
+      {
+        "role": "ai",
+        "content": "What is the employee's job title or role?"
+      },
+      {
+        "role": "human",
+        "content": "ai engineer"
+      },
+      {
+        "role": "ai",
+        "content": "Thank you for providing the job title. What team or department does the employee work in?"
+      },
+      {
+        "role": "human",
+        "content": "ai"
+      },
+      {
+        "role": "ai",
+        "content": "What is the performance gap title? Please provide a concise and neutral title describing the gap, such as 'Timeliness in Task Response' or 'Accuracy in Project Delivery.'"
+      },
+      {
+        "role": "human",
+        "content": "Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation"
+      },
+      {
+        "role": "ai",
+        "content": "The title you've provided is clear and specific. Now, let's move on to the next question.\n\nWhat is the Current Performance Summary? This section should include a brief overview (2-3 sentences) of the employee's current performance shortcomings. For example: \"Your current performance shows inconsistencies in handling critical tasks and accountability, notably regarding time-off requests and urgent matters.\""
+      },
+      {
+        "role": "human",
+        "content": "I wanna refine the performance gap title"
+      },
+      {
+        "role": "ai",
+        "content": "Please go ahead and provide your refined performance gap title. What would you like to change it to?"
+      },
+      {
+        "role": "human",
+        "content": "Timeliness in Task Response"
+      },
+      {
+        "role": "ai",
+        "content": "The title \"Timeliness in Task Response\" is clear and neutral. \n\nWhat is the Current Performance Summary? This section should include a brief overview (2-3 sentences) of the employee's current performance shortcomings. For example: \"Your current performance shows inconsistencies in handling critical tasks and accountability, notably regarding time-off requests and urgent matters.\""
+      },
+      {
+        "role": "human",
+        "content": "Your current performance shows inconsistencies in handling critical tasks and accountability, notably regarding time-off requests and urgent matters."
+      },
+      {
+        "role": "ai",
+        "content": "I see we need to follow the structured format for collecting information. You've already provided \"Timeliness in Task Response\" as the performance gap title, which is good.\n\nNow, let's continue with the Current Performance Summary. You mentioned: \"Your current performance shows inconsistencies in handling critical tasks and accountability, notably regarding time-off requests and urgent matters.\"\n\nThis is a good start, but could you provide a bit more context about how these inconsistencies specifically relate to timeliness in task response? This will help make the performance gap clearer."
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743589966.884359": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, an HR assistant who can help you create Performance Improvement Plan documents. Let me know if you'd like assistance with developing a PIP document for an employee."
+      },
+      {
+        "role": "human",
+        "content": "generate PIP"
+      },
+      {
+        "role": "ai",
+        "content": "What is the employee's job title or role?"
+      },
+      {
+        "role": "human",
+        "content": "ai engineer"
+      },
+      {
+        "role": "ai",
+        "content": "What team or department does the employee work in?"
+      },
+      {
+        "role": "human",
+        "content": "ai"
+      },
+      {
+        "role": "ai",
+        "content": "What is the performance gap title? Provide a concise and neutral title describing the gap, e.g., 'Timeliness in Task Response' or 'Accuracy in Project Delivery.'"
+      },
+      {
+        "role": "human",
+        "content": "Timeliness in Task Response"
+      },
+      {
+        "role": "ai",
+        "content": "The title \"Timeliness in Task Response\" is clear and specific. \n\nWhat is the Current Performance Summary? This section includes a brief overview (2-3 sentences) of the employee's current performance shortcomings (e.g., Your current performance shows inconsistencies in handling critical tasks and accountability, notably regarding time-off requests and urgent matters."
+      },
+      {
+        "role": "human",
+        "content": "Your current performance shows inconsistencies in handling critical tasks and accountability, notably regarding time-off requests and urgent matters."
+      },
+      {
+        "role": "ai",
+        "content": "I see you've provided a good current performance summary that highlights the inconsistencies in handling critical tasks and accountability issues.\n\nWhat are the examples of performance gaps? Detail one specific instance with the following: (1) date (e.g., July 9, 2024), (2) context/tool used (e.g., Slack, ClickUp), (3) a description of what transpired, what the expectations were, and the resulting impact.\n\nFor example:\nExample 1 Date: On November 20, 2024\nExample 1 Issue: Legal Universe for Germany Health and Safety Mapping delayed by 2 weeks.\nExample 1 Impact: Project completion delayed until December 10, 2024."
+      },
+      {
+        "role": "human",
+        "content": "Example 1 Date: On November 20, 2024\nExample 1 Issue: Legal Universe for Germany Health and Safety Mapping delayed by 2 weeks.\nExample 1 Impact: Project completion delayed until December 10, 2024."
+      },
+      {
+        "role": "ai",
+        "content": "I see you've provided a specific example with date, issue, and impact. This is a good start, but I need to continue gathering information in a structured way.\n\nWhat is the expected performance? Articulate how the ideal performance should look like for this gap area (2-3 sentences) (e.g., \"The expected performance is to respond promptly to urgent tasks while fully taking responsibility, effectively communicating, resolving issues in a timely manner, and ensuring task completion.\")"
+      },
+      {
+        "role": "human",
+        "content": "The expected performance is to evaluate and finalize the visual automation tool by the end of Q4. During the evaluation, you are expected to proactively communicate with vendors and team members to ensure milestones are met. As a team lead, you must address technical challenges and provide regular, concise, and accurate progress updates. By the end of Q4, you should have completed the evaluation and selected a visual automation tool based on the outcome."
+      },
+      {
+        "role": "ai",
+        "content": "The expected performance statement you've provided is clear and well-defined. It outlines specific responsibilities with a clear timeframe, expectations for communication, and a defined end goal.\n\nAre there more performance gaps you'd like to discuss, or shall we move on to developing the improvement plan for this performance gap?"
+      }
+    ]
+  },
+  "slack-D08JACQTKFB-1743604085.254529": {
+    "messages": [
+      {
+        "role": "human",
+        "content": "hi"
+      },
+      {
+        "role": "ai",
+        "content": "Hello! I'm Leo, an HR assistant who can help you create Performance Improvement Plan documents. Let me know if you'd like assistance with creating a PIP document or if you have any questions about the process."
+      },
+      {
+        "role": "human",
+        "content": "generate PIP"
+      },
+      {
+        "role": "ai",
+        "content": "I'm processing your request. Could you provide more details?"
+      },
+      {
+        "role": "human",
+        "content": "generate PIP"
+      },
+      {
+        "role": "ai",
+        "content": "What is the employee's job title or role?"
+      },
+      {
+        "role": "human",
+        "content": "ai engineer"
+      },
+      {
+        "role": "ai",
+        "content": "What team or department does the employee work in?"
+      },
+      {
+        "role": "human",
+        "content": "ai department"
+      },
+      {
+        "role": "ai",
+        "content": "What is the performance gap title? Please provide a concise and neutral title describing the gap, such as 'Timeliness in Task Response' or 'Accuracy in Project Delivery.'"
+      },
+      {
+        "role": "human",
+        "content": "Lack of Progress and Proactive Action on the Visual Automation Tool Evaluation"
+      },
+      {
+        "role": "ai",
+        "content": "The title is specific and clearly identifies the performance issue. It focuses on two key aspects: lack of progress and lack of proactive action, specifically related to the Visual Automation Tool Evaluation project.\n\nWhat is the Current Performance Summary? This section includes a brief overview (2-3 sentences) of the employee's current performance shortcomings."
+      },
+      {
+        "role": "human",
+        "content": "\"Throughout Q4, there were no regular progress updates provided until specifically requested. This lack of initiative in communicating progress made it difficult to assess the status of the project and delayed decision-making.\""
+      },
+      {
+        "role": "ai",
+        "content": "Your current performance summary effectively highlights the key issues: lack of regular updates and proactive communication, which impacted project visibility and decision-making. The summary is concise and focused on observable behaviors rather than assumptions about intent.\n\nWhat are the examples of performance gaps? Please detail one specific instance with the following: (1) date, (2) context/tool used, and (3) a description of what transpired, what the expectations were, and the resulting impact."
+      },
+      {
+        "role": "human",
+        "content": "\"\"\"On November 12, 2024, during our catch-up call, I raised concerns about the lack of progress on the visual automation tool evaluation. I instructed you to create a clear comparison sheet documenting the tools tested, including a list of must-have features. I provided an example of a comparison sheet for reference. During the call, I also emphasized the need for consistent progress updates and instructed you to provide status updates every Thursday or, at the latest, by Friday.\n\nOn November 15, 2024, the comparison sheet was still not completed. I sent a reminder via Slack, reiterating to provide consistent updates on the evaluation progress by the end of each Thursday. You acknowledged this and agreed to give consistent updates on the evaluation progress.\"\"\""
+      },
+      {
+        "role": "ai",
+        "content": "Your example is detailed and specific, providing a clear timeline of events with exact dates, the context (catch-up call and Slack communication), and the expectations that were set. The example effectively demonstrates the performance gap by showing both the initial instruction and the follow-up reminder that was needed.\n\nWhat is the expected performance? Please articulate how the ideal performance should look like for this gap area (2-3 sentences)."
+      },
+      {
+        "role": "human",
+        "content": "The expected performance is to evaluate and finalize the visual automation tool by the end of Q4. During the evaluation, you are expected to proactively communicate with vendors and team members to ensure milestones are met. As a team lead, you must address technical challenges and provide regular, concise, and accurate progress updates. By the end of Q4, you should have completed the evaluation and selected a visual automation tool based on the outcome."
+      },
+      {
+        "role": "ai",
+        "content": "Your expected performance statement is clear and comprehensive. It outlines specific expectations including evaluating and finalizing the tool by the end of Q4, proactive communication with stakeholders, addressing technical challenges, providing regular updates, and completing the evaluation with a tool selection. The statement effectively establishes measurable outcomes and behaviors.\n\nAre there any more performance gaps you would like to discuss?"
+      }
+    ]
   }
 }

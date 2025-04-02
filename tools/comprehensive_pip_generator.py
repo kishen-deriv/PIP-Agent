@@ -70,14 +70,12 @@ class ComprehensivePIPGeneratorTool(BaseTool):
 
         ### 1. EXTRACT AND VERIFY EMPLOYEE INFORMATION
         Extract and validate ALL of the following details:
-        - Employee's full name (exactly as written)
         - Employee's precise job title/role (use exact terminology provided)
         - Employee's specific team/department name
-        - Manager's full name and title
         - PIP start date and duration/end date
         - Any additional identifying information (employee ID, location, etc.)
 
-        If any critical information is missing or ambiguous (name, role, dates), explicitly note this in your analysis.
+        If any critical information is missing or ambiguous (role, dates), explicitly note this in your analysis.
 
         ### 2. ANALYZE PERFORMANCE GAPS WITH PRECISION
         For EACH identified performance gap:
