@@ -1,84 +1,137 @@
-# Memory-Enabled Agent
+# Performance Improvement Plan (PIP) Agent
 
-This directory contains an implementation of a memory-enabled agent that can maintain conversation history across multiple sessions.
+This repository contains an implementation of an AI-powered assistant that helps managers create structured and effective Performance Improvement Plans (PIPs) through an interactive, step-by-step process.
 
-## Features
+## Overview
 
-- Persistent conversation memory using file-based storage
-- Support for multiple conversation threads
-- Command-line interface for interactive chat
-- Thread management (create, switch, clear, list)
+The PIP Agent guides managers through the process of creating comprehensive Performance Improvement Plans by:
 
-## Files
+1. Collecting employee information
+2. Analyzing performance gaps
+3. Developing improvement plans
+4. Identifying support resources
+5. Generating a professional PIP document
 
-- `new_agent.py`: Core implementation of the memory-enabled agent
-- `chat_cli.py`: Command-line interface for interacting with the agent
-- `agent.py`: Original agent implementation (for reference)
+The system uses a conversational approach, asking one question at a time and providing immediate feedback on the quality and completeness of the information provided.
+
+## Components
+
+The PIP Agent consists of several specialized tools:
+
+### 1. Employee Info Extractor
+- Collects essential employee details (job title, department)
+- Asks one question at a time to gather information
+
+### 2. Performance Gap Analyzer
+- Analyzes performance gaps with a structured approach
+- Collects and evaluates:
+  - Gap Title (concise, 5-7 words)
+  - Current Performance (2-3 line professional summary)
+  - Examples (with date, context, and impact)
+  - Expected Performance (starting with "The expected performance is...")
+- Provides percentage-based feedback (25% per section)
+- Always includes specific improvement suggestions
+
+### 3. Improvement Plan Analyzer
+- Collects improvement plans for each performance gap
+- Focuses on two key aspects:
+  - Goal (2-3 line outcome tied to Expected Performance)
+  - Action Plans (SMART steps with specific timelines)
+- Provides percentage-based feedback (50% per section)
+- Always explains what accounts for any missing percentage points
+
+### 4. Support Resources Identifier
+- Identifies support resources for each performance gap
+- Evaluates resources based on specificity, relevance, and variety
+- Ensures resources come from different categories (training, mentoring, tools, materials)
+- Provides percentage-based feedback with specific improvement suggestions
+
+### 5. Comprehensive PIP Generator
+- Combines all collected information into a professional PIP document
+- Follows a standardized format with consistent sections
+- Maintains privacy by using placeholders instead of actual names
+
+## Workflow
+
+The PIP creation process follows this workflow:
+
+1. **Employee Information Collection**
+   - Job title/role
+   - Team/department
+
+2. **Performance Gap Analysis** (for each gap)
+   - Gap title
+   - Current performance summary
+   - Specific examples with dates and impact
+   - Expected performance
+
+3. **Improvement Plan Development** (for each gap)
+   - Goal for improvement
+   - Actionable steps with timelines
+
+4. **Support Resources Identification** (for each gap)
+   - Specific resources from different categories
+   - Training, mentoring, tools, and materials
+
+5. **PIP Document Generation**
+   - Professionally formatted document
+   - Consistent structure
+   - Privacy-preserving placeholders
+
+## Key Features
+
+- **Interactive Guidance**: Step-by-step questions with immediate feedback
+- **Structured Evaluation**: Clear criteria for evaluating each input
+- **Percentage-Based Feedback**: Quantitative assessment of input quality
+- **Specific Improvement Suggestions**: Always provides actionable feedback
+- **Privacy Protection**: Never includes actual employee names in responses
+- **Professional Formatting**: Consistent document structure
+
+## Recent Improvements
+
+- **Enhanced Feedback System**: All tools now provide percentage-based feedback with specific improvement suggestions
+- **Streamlined Question Flow**: Reduced improvement plan questions from 3 to 2, combining timeline with actionable steps
+- **Detailed Guidance**: Added descriptive examples to questions to guide better responses
+- **Consistent Evaluation Criteria**: Standardized approach across all tools
+- **Explicit Improvement Areas**: Always explains what accounts for any missing percentage points
 
 ## Usage
 
-### Basic Usage
-
 ```bash
-# Start a chat session with the default thread
-python src/chat_cli.py
-
-# Start a chat session with a specific thread
-python src/chat_cli.py --thread work
-
-# Clear the conversation history before starting
-python src/chat_cli.py --clear
-
-# List all available conversation threads
-python src/chat_cli.py --list
+# Run the PIP Agent
+python main.py
 ```
 
-### CLI Commands
+## Example Interaction
 
-During a chat session, you can use the following commands:
+```
+User: I need to create a PIP for an employee
 
-- `!help`: Show available commands
-- `!clear`: Clear the current conversation history
-- `!list`: List all messages in the current thread
-- `!switch NAME`: Switch to a different conversation thread
-- `exit`, `quit`: Exit the application
+Agent: What is the employee's job title/role?
 
-### Programmatic Usage
+User: Software Engineer
 
-```python
-from src.new_agent import chat_with_memory
+Agent: What is the employee's team/department?
 
-# Chat with the agent using the default thread
-response = chat_with_memory("Hello, how are you?")
-print(response)
+User: Engineering
 
-# Chat with the agent using a specific thread
-response = chat_with_memory("What's the weather like?", thread_id="weather")
-print(response)
+Agent: What is the performance gap title? Provide a concise and neutral title describing the gap, e.g., 'Timeliness in Task Response' or 'Accuracy in Project Delivery.'
+
+User: Code Quality Issues
+
+Agent: This gap title is at 80% match with our guidelines. It's concise and relevant, but could be more specific. The remaining 20% issue is that it could better describe the nature of the quality issues. I suggest: 'Inadequate Code Quality Standards' or 'Code Documentation Deficiencies'. Would you like to refine this gap title, or are you satisfied with it and ready to move to the next question?
+
+...
 ```
 
-## How It Works
+## Requirements
 
-The agent uses a file-based storage system to maintain conversation history. Each conversation is stored in a JSON file with the following structure:
+- Python 3.8+
+- Required packages listed in `requirements.txt`
 
-```json
-{
-  "thread-id": {
-    "messages": [
-      {"role": "human", "content": "Hello, how are you?"},
-      {"role": "ai", "content": "I'm doing well, thank you for asking!"}
-    ]
-  }
-}
-```
+## Setup
 
-When a new message is received, the agent:
-
-1. Loads the conversation history for the specified thread
-2. Adds the new message to the history
-3. Converts the history to LangChain message format
-4. Invokes the agent with the conversation history
-5. Adds the agent's response to the history
-6. Saves the updated history
-
-This approach allows the agent to maintain context across multiple interactions, even if the application is restarted.
+1. Clone the repository
+2. Install dependencies: `pip install -r requirements.txt`
+3. Set up environment variables in `.env` file (see `.env.example`)
+4. Run the application: `python main.py`
